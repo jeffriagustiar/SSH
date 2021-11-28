@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Profile;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = User::with(['profile'])
+                ->findOrFail(Auth::user()->id);
+        $users = Profile::with('users')
+                ->get();
+        //dd($user);
+        return view('home',[
+            'user' => $user,
+            'users' => $users
+        ]);
     }
 }

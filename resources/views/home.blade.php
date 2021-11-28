@@ -14,8 +14,23 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }} {{ $user->profile->nama }}
                 </div>
+
+                @forelse ($users as $u)
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    Nama->{{ $u->nama }} email->{{ $u->users->email }}
+                </div>
+                @empty
+                <div class="card-header">{{ __('Kosong') }}</div>
+                @endforelse
+
             </div>
         </div>
     </div>

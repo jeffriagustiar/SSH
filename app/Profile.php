@@ -13,6 +13,11 @@ class Profile extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'id','users_id');
+        return $this->hasOne(User::class,'id','users_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class,'users_id','id');
     }
 }
