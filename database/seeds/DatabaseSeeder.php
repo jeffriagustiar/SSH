@@ -1,5 +1,6 @@
 <?php
 
+use App\Account;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -33,9 +34,9 @@ class DatabaseSeeder extends Seeder
                 'created_at' => date_create()
             ]);
         }
-        
 
         //tanpa relasi table yang di ambil dari UserFactory
         //factory(User::class,10)->create(); 
+        //factory(Account::class,7041)->create();
     }
 }

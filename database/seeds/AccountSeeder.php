@@ -12,7 +12,7 @@ class AccountSeeder extends Seeder
      */
     public function run()
     {
-        Account::truncate();
+        //Account::truncate();
 
         $csv = fopen(base_path("database/data/test2.csv"), "r");
 

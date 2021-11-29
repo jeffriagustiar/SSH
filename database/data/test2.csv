@@ -445,23 +445,23 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 4.1.02.03.07.0001;Retribusi Persetujuan Bangunan Gedung;1;0;0
 4.1.02.03.09.0001;Retribusi Pengelolaan Pertambangan Rakyat;1;0;0
 4.1.03.01.01.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMN;1;0;0
-4.1.03.01.01.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMN …;1;0;0
-4.1.03.01.01.002;Dst …;1;0;0
+4.1.03.01.01.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMN ;1;0;0
+4.1.03.01.01.002;Dst ;1;0;0
 4.1.03.02.01.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Lembaga Keuangan);1;0;0
-4.1.03.02.01.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Lembaga Keuangan) …;1;0;0
-4.1.03.02.01.002;Dst …;1;0;0
+4.1.03.02.01.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Lembaga Keuangan) ;1;0;0
+4.1.03.02.01.002;Dst ;1;0;0
 4.1.03.02.02.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Aneka Usaha);1;0;0
-4.1.03.02.02.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Aneka Usaha) …;1;0;0
-4.1.03.02.02.002;Dst …;1;0;0
+4.1.03.02.02.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Aneka Usaha) ;1;0;0
+4.1.03.02.02.002;Dst ;1;0;0
 4.1.03.02.03.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada Perusahaan Milik Daerah/BUMD (Bidang Air Minum);1;0;0
-4.1.03.02.03.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada Perusahaan Milik Daerah/BUMD (Bidang Air Minum) …;1;0;0
-4.1.03.02.03.002;Dst …;1;0;0
+4.1.03.02.03.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada Perusahaan Milik Daerah/BUMD (Bidang Air Minum) ;1;0;0
+4.1.03.02.03.002;Dst ;1;0;0
 4.1.03.02.04.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Bidang Limbah);1;0;0
-4.1.03.02.04.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Bidang Limbah) …;1;0;0
-4.1.03.02.04.002;Dst …;1;0;0
+4.1.03.02.04.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Bidang Limbah) ;1;0;0
+4.1.03.02.04.002;Dst ;1;0;0
 4.1.03.02.05.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Bidang Sanitasi);1;0;0
-4.1.03.02.05.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Bidang Sanitasi) …;1;0;0
-4.1.03.02.05.002;Dst …;1;0;0
+4.1.03.02.05.001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada BUMD (Bidang Sanitasi) ;1;0;0
+4.1.03.02.05.002;Dst ;1;0;0
 4.1.03.03.01.0001;Bagian Laba yang Dibagikan kepada Pemerintah Daerah (Dividen) atas Penyertaan Modal pada Perusahaan Milik Swasta;1;0;0
 4.1.04.01.01.0001;Hasil Penjualan Tanah;1;0;0
 4.1.04.01.01.001;Hasil Penjualan Tanah;1;0;0
@@ -630,8 +630,8 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 4.1.04.05.04.001;Jasa Giro pada BLUD ...;1;0;0
 4.1.04.05.04.002;Dst ...;1;0;0
 4.1.04.05.05.0001;Jasa Giro Dana Kapitasi pada FKTP;1;0;0
-4.1.04.05.05.001;Jasa Giro pada Rekening Dana BOS …;1;0;0
-4.1.04.05.05.002;Dst …;1;0;0
+4.1.04.05.05.001;Jasa Giro pada Rekening Dana BOS ;1;0;0
+4.1.04.05.05.002;Dst ;1;0;0
 4.1.04.05.06.001;Jasa Giro Dana Kapitasi pada FKTP;1;0;0
 4.1.04.05.06.002;Jasa Giro Dana Kapitasi pada FKTP;1;0;0
 4.1.04.06.01.0001;Hasil Pengelolaan Dana Bergulir;1;0;0
@@ -950,7 +950,7 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 4.1.04.15.04.0003;Pendapatan dari Pengembalian Kelebihan Pembayaran Perjalanan Dinas Dalam Negeri- Perjalanan Dinas Dalam Kota;1;0;0
 4.1.04.15.04.0004;Pendapatan dari Pengembalian Kelebihan Pembayaran Perjalanan Dinas Dalam Negeri- Perjalanan Dinas Paket Meeting Dalam Kota;1;0;0
 4.1.04.15.04.0005;Pendapatan dari Pengembalian Kelebihan Pembayaran Perjalanan Dinas Dalam Negeri- Perjalanan Dinas Paket Meeting Luar Kota;1;0;0
-4.1.04.15.04.0006;Pendapatan dari Pengembalian Kelebihan Pembayaran Perjalanan Dinas Luar Negeri- Perjalanan Dinas Biasa–Luar Negeri;1;0;0
+4.1.04.15.04.0006;Pendapatan dari Pengembalian Kelebihan Pembayaran Perjalanan Dinas Luar Negeri- Perjalanan Dinas BiasaLuar Negeri;1;0;0
 4.1.04.15.04.001;Pendapatan dari Pengembalian Kelebihan Pembayaran Perjalanan Dinas;1;0;0
 4.1.04.15.05.0001;Pendapatan dari Pengembalian Kelebihan Pembayaran JKK;1;0;0
 4.1.04.15.05.001;Pendapatan dari Pengembalian Kelebihan Pembayaran JKK;1;0;0
@@ -960,7 +960,7 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 4.1.04.15.07.001;Pendapatan dari Pengembalian Kelebihan Pembayaran Jaminan Kesehatan Nasional (JKN);1;0;0
 4.1.04.16.01.0001;Pendapatan BLUD;1;0;0
 4.1.04.16.01.001;Pendapatan BLUD;1;0;0
-4.1.04.16.01.002;Dst…;1;0;0
+4.1.04.16.01.002;Dst;1;0;0
 4.1.04.17.01.0001;Pendapatan Denda Pengakhiran Sewa BMD;1;0;0
 4.1.04.17.01.001;Pendapatan Denda Pengakhiran Sewa BMD;1;0;0
 4.1.04.17.02.0001;Pendapatan Denda Hasil dari Kerja Sama Penyediaan Infrastruktur;1;0;0
@@ -1178,41 +1178,41 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 4.2.02.01.01.004;Pendapatan Bagi Hasil Pajak Air Permukaan;1;0;0
 4.2.02.01.01.005;Pendapatan Bagi Hasil Pajak Rokok;1;0;0
 4.2.02.02.01.0001;Bantuan Keuangan Umum dari Pemerintah Daerah Provinsi;1;0;0
-4.2.02.02.01.001;Bantuan Keuangan Umum dari Pemerintah Daerah Provinsi …;1;0;0
-4.2.02.02.01.002;Dst …;1;0;0
+4.2.02.02.01.001;Bantuan Keuangan Umum dari Pemerintah Daerah Provinsi ;1;0;0
+4.2.02.02.01.002;Dst ;1;0;0
 4.2.02.02.02.0001;Bantuan Keuangan Khusus dari Pemerintah Daerah Provinsi;1;0;0
-4.2.02.02.02.001;Bantuan Keuangan Khusus dari Pemerintah Daerah Provinsi …;1;0;0
-4.2.02.02.02.002;Dst …;1;0;0
+4.2.02.02.02.001;Bantuan Keuangan Khusus dari Pemerintah Daerah Provinsi ;1;0;0
+4.2.02.02.02.002;Dst ;1;0;0
 4.2.02.02.03.0001;Bantuan Keuangan Umum dari Pemerintah Daerah Kabupaten/Kota;1;0;0
-4.2.02.02.03.001;Bantuan Keuangan Umum dari Pemerintah Daerah Kabupaten/Kota …;1;0;0
-4.2.02.02.03.002;Dst …;1;0;0
+4.2.02.02.03.001;Bantuan Keuangan Umum dari Pemerintah Daerah Kabupaten/Kota ;1;0;0
+4.2.02.02.03.002;Dst ;1;0;0
 4.2.02.02.04.0001;Bantuan Keuangan Khusus dari Pemerintah Daerah Kabupaten/Kota;1;0;0
-4.2.02.02.04.001;Bantuan Keuangan Khusus dari Pemerintah Daerah Kabupaten/Kota …;1;0;0
-4.2.02.02.04.002;Dst …;1;0;0
+4.2.02.02.04.001;Bantuan Keuangan Khusus dari Pemerintah Daerah Kabupaten/Kota ;1;0;0
+4.2.02.02.04.002;Dst ;1;0;0
 4.3.01.01.01.0001;Pendapatan Hibah dari Pemerintah Pusat;1;0;0
-4.3.01.01.01.001;Pendapatan Hibah dari Pemerintah Pusat …;1;0;0
-4.3.01.01.01.002;Dst …;1;0;0
+4.3.01.01.01.001;Pendapatan Hibah dari Pemerintah Pusat ;1;0;0
+4.3.01.01.01.002;Dst ;1;0;0
 4.3.01.02.01.0001;Pendapatan Hibah dari Pemerintah Daerah;1;0;0
-4.3.01.02.01.001;Pendapatan Hibah dari Pemerintah Daerah …;1;0;0
-4.3.01.02.01.002;Dst …;1;0;0
+4.3.01.02.01.001;Pendapatan Hibah dari Pemerintah Daerah ;1;0;0
+4.3.01.02.01.002;Dst ;1;0;0
 4.3.01.03.01.0001;Pendapatan Hibah dari Kelompok Masyarakat Dalam Negeri/Perorangan dalam Negeri;1;0;0
 4.3.01.03.01.001;Pendapatan Hibah dari Kelompok Masyarakat Dalam Negeri/Perorangan dalam Negeri ...;1;0;0
-4.3.01.03.01.002;Dst …;1;0;0
+4.3.01.03.01.002;Dst ;1;0;0
 4.3.01.04.01.0001;Pendapatan Hibah dari Badan/Lembaga/ Organisasi Dalam Negeri;1;0;0
 4.3.01.04.01.001;Pendapatan Hibah dari Badan/Lembaga/ Organisasi Dalam Negeri ...;1;0;0
-4.3.01.04.01.002;Dst …;1;0;0
+4.3.01.04.01.002;Dst ;1;0;0
 4.3.01.04.02.0001;Pendapatan Hibah dari Badan/Lembaga/ Organisasi Luar Negeri;1;0;0
 4.3.01.04.02.001;Pendapatan Hibah dari Badan/Lembaga/ Organisasi Luar Negeri ...;1;0;0
-4.3.01.04.02.002;Dst …;1;0;0
+4.3.01.04.02.002;Dst ;1;0;0
 4.3.01.04.03.0001;Pendapatan Hibah dari Lembaga/Organisasi Swasta Dalam Negeri;1;0;0
-4.3.01.04.03.001;Pendapatan Hibah dari Lembaga/Organisasi Swasta Dalam Negeri …;1;0;0
-4.3.01.04.03.002;Dst …;1;0;0
+4.3.01.04.03.001;Pendapatan Hibah dari Lembaga/Organisasi Swasta Dalam Negeri ;1;0;0
+4.3.01.04.03.002;Dst ;1;0;0
 4.3.01.04.04.0001;Pendapatan Hibah dari Lembaga/Organisasi Swasta Luar Negeri;1;0;0
-4.3.01.04.04.001;Pendapatan Hibah dari Lembaga/Organisasi Swasta Luar Negeri …;1;0;0
-4.3.01.04.04.002;Dst …;1;0;0
+4.3.01.04.04.001;Pendapatan Hibah dari Lembaga/Organisasi Swasta Luar Negeri ;1;0;0
+4.3.01.04.04.002;Dst ;1;0;0
 4.3.01.05.01.0001;Sumbangan Pihak Ketiga/Sejenis;1;0;0
-4.3.01.05.01.001;Sumbangan Pihak Ketiga/Sejenis …;1;0;0
-4.3.01.05.01.002;Dst …;1;0;0
+4.3.01.05.01.001;Sumbangan Pihak Ketiga/Sejenis ;1;0;0
+4.3.01.05.01.002;Dst ;1;0;0
 4.3.02.01.01.0001;Dana Darurat pada Tahap Pasca Bencana;1;0;0
 4.3.02.01.01.001;Dana Darurat pada Tahap Pasca Bencana;1;0;0
 4.3.03.01.01.0001;Pendapatan Hibah Dana BOS;1;0;0
@@ -4511,7 +4511,7 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 5.1.02.04.01.0004;Belanja Perjalanan Dinas Paket Meeting Dalam Kota;0;1;0
 5.1.02.04.01.0005;Belanja Perjalanan Dinas Paket Meeting Luar Kota;0;1;0
 5.1.02.04.01.001;Belanja Perjalanan Dinas Dalam Daerah;0;1;0
-5.1.02.04.02.0001;Belanja Perjalanan Dinas Biasa–Luar Negeri;0;1;0
+5.1.02.04.02.0001;Belanja Perjalanan Dinas BiasaLuar Negeri;0;1;0
 5.1.02.04.02.001;Belanja Perjalanan Dinas Luar Daerah;0;1;0
 5.1.02.04.03.001;Belanja Perjalanan Dinas Pindah Tugas Dalam Daerah;0;1;0
 5.1.02.04.03.002;Belanja Perjalanan Dinas Pindah Tugas Luar Daerah;0;1;0
@@ -4612,13 +4612,13 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 5.1.03.05.01.0001;Belanja Bunga Utang Kepada Masyarakat (Obligasi);0;1;0
 5.1.03.05.01.001;Belanja Bunga Utang Kepada Masyarakat (Obligasi);0;1;0
 5.1.03.06.01.0001;Belanja Bunga Utang Pinjaman melalui BLUD-Jangka Pendek;0;1;0
-5.1.03.06.01.001;Belanja Bunga Utang Pinjaman BLUD ... –Jangka Pendek;0;1;0
+5.1.03.06.01.001;Belanja Bunga Utang Pinjaman BLUD ... Jangka Pendek;0;1;0
 5.1.03.06.01.002;Dst ...;0;1;0
 5.1.03.06.02.0001;Belanja Bunga Utang Pinjaman melalui BLUD-Jangka Menengah;0;1;0
-5.1.03.06.02.001;Belanja Bunga Utang Pinjaman BLUD ... –Jangka Menengah;0;1;0
+5.1.03.06.02.001;Belanja Bunga Utang Pinjaman BLUD ... Jangka Menengah;0;1;0
 5.1.03.06.02.002;Dst ...;0;1;0
 5.1.03.06.03.0001;Belanja Bunga Utang Pinjaman melalui BLUD-Jangka Panjang;0;1;0
-5.1.03.06.03.001;Belanja Bunga Utang Pinjaman BLUD ... –Jangka Panjang;0;1;0
+5.1.03.06.03.001;Belanja Bunga Utang Pinjaman BLUD ... Jangka Panjang;0;1;0
 5.1.03.06.03.002;Dst ...;0;1;0
 5.1.04.01.01.0001;Belanja Subsidi kepada BUMN;0;1;0
 5.1.04.01.01.001;Belanja Subsidi kepada BUMN ...;0;1;0
@@ -4703,8 +4703,8 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 5.1.05.06.04.001;Belanja Hibah Uang Dana BOS yang Diterima oleh Satdiksus Swasta ...;0;1;0
 5.1.05.06.04.002;Dst ...;0;1;0
 5.1.05.07.01.0001;Belanja Hibah berupa Bantuan Keuangan kepada Partai Politik;0;1;0
-5.1.05.07.01.001;Belanja Hibah berupa Bantuan Keuangan kepada Partai Politik …;0;1;0
-5.1.05.07.01.002;Dst …;0;1;0
+5.1.05.07.01.001;Belanja Hibah berupa Bantuan Keuangan kepada Partai Politik ;0;1;0
+5.1.05.07.01.002;Dst ;0;1;0
 5.1.06.01.01.0001;Belanja Bantuan Sosial Uang yang Direncanakan kepada Individu;0;1;0
 5.1.06.01.01.001;Belanja Bantuan Sosial Uang yang Direncanakan kepada Individu...;0;1;0
 5.1.06.01.01.002;Dst ...;0;1;0
@@ -6323,35 +6323,35 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 5.4.01.01.03.002;Dst ...;0;1;0
 5.4.01.02.01.0001;Belanja Bagi Hasil Retribusi Daerah Kabupaten/Kota Kepada Pemerintah Desa;0;1;0
 5.4.02.01.01.0001;Belanja Bantuan Keuangan Umum kepada Pemerintah Provinsi;0;1;0
-5.4.02.01.01.001;Belanja Bantuan Keuangan Umum kepada Pemerintah Provinsi …;0;1;0
-5.4.02.01.01.002;Dst …;0;1;0
+5.4.02.01.01.001;Belanja Bantuan Keuangan Umum kepada Pemerintah Provinsi ;0;1;0
+5.4.02.01.01.002;Dst ;0;1;0
 5.4.02.01.02.0001;Belanja Bantuan Keuangan Khusus kepada Pemerintah Provinsi;0;1;0
-5.4.02.01.02.001;Belanja Bantuan Keuangan Khusus kepada Pemerintah Provinsi …;0;1;0
-5.4.02.01.02.002;Dst …;0;1;0
+5.4.02.01.02.001;Belanja Bantuan Keuangan Khusus kepada Pemerintah Provinsi ;0;1;0
+5.4.02.01.02.002;Dst ;0;1;0
 5.4.02.02.01.0001;Belanja Bantuan Keuangan Umum kepada Pemerintah Kabupaten/Kota;0;1;0
-5.4.02.02.01.001;Belanja Bantuan Keuangan Umum kepada Pemerintah Kabupaten/Kota …;0;1;0
-5.4.02.02.01.002;Dst …;0;1;0
+5.4.02.02.01.001;Belanja Bantuan Keuangan Umum kepada Pemerintah Kabupaten/Kota ;0;1;0
+5.4.02.02.01.002;Dst ;0;1;0
 5.4.02.02.02.0001;Belanja Bantuan Keuangan Khusus antar Daerah Kabupaten/Kota;0;1;0
-5.4.02.02.02.001;Belanja Bantuan Keuangan Khusus antar Daerah Kabupaten/Kota …;0;1;0
-5.4.02.02.02.002;Dst …;0;1;0
+5.4.02.02.02.001;Belanja Bantuan Keuangan Khusus antar Daerah Kabupaten/Kota ;0;1;0
+5.4.02.02.02.002;Dst ;0;1;0
 5.4.02.03.01.0001;Belanja Bantuan Keuangan Umum Daerah Provinsi ke Kabupaten/Kota;0;1;0
 5.4.02.03.01.001;Belanja Bantuan Keuangan Umum Daerah Provinsi ke Kabupaten/Kota ...;0;1;0
-5.4.02.03.01.002;Dst …;0;1;0
+5.4.02.03.01.002;Dst ;0;1;0
 5.4.02.03.02.0001;Belanja Bantuan Keuangan Khusus Daerah Provinsi ke Kabupaten/Kota;0;1;0
 5.4.02.03.02.001;Belanja Bantuan Keuangan Khusus Daerah Provinsi ke Kabupaten/Kota ...;0;1;0
-5.4.02.03.02.002;Dst …;0;1;0
+5.4.02.03.02.002;Dst ;0;1;0
 5.4.02.04.01.0001;Belanja Bantuan Keuangan Umum Daerah Kabupaten/Kota ke Provinsi;0;1;0
-5.4.02.04.01.001;Belanja Bantuan Keuangan Umum Daerah Kabupaten/Kota ke Provinsi …;0;1;0
-5.4.02.04.01.002;Dst …;0;1;0
+5.4.02.04.01.001;Belanja Bantuan Keuangan Umum Daerah Kabupaten/Kota ke Provinsi ;0;1;0
+5.4.02.04.01.002;Dst ;0;1;0
 5.4.02.04.02.0001;Belanja Bantuan Keuangan Khusus Daerah Kabupaten/Kota ke Provinsi;0;1;0
-5.4.02.04.02.001;Belanja Bantuan Keuangan Khusus Daerah Kabupaten/Kota ke Provinsi …;0;1;0
-5.4.02.04.02.002;Dst …;0;1;0
+5.4.02.04.02.001;Belanja Bantuan Keuangan Khusus Daerah Kabupaten/Kota ke Provinsi ;0;1;0
+5.4.02.04.02.002;Dst ;0;1;0
 5.4.02.05.01.0001;Belanja Bantuan Keuangan Umum Daerah Provinsi atau Kabupaten/Kota kepada Desa;0;1;0
-5.4.02.05.01.001;Belanja Bantuan Keuangan Umum Daerah Provinsi atau Kabupaten/Kota kepada Desa …;0;1;0
-5.4.02.05.01.002;Dst …;0;1;0
+5.4.02.05.01.001;Belanja Bantuan Keuangan Umum Daerah Provinsi atau Kabupaten/Kota kepada Desa ;0;1;0
+5.4.02.05.01.002;Dst ;0;1;0
 5.4.02.05.02.0001;Belanja Bantuan Keuangan Khusus Daerah Provinsi atau Kabupaten/Kota kepada Desa;0;1;0
-5.4.02.05.02.001;Belanja Bantuan Keuangan Khusus Daerah Provinsi atau Kabupaten/Kota kepada Desa …;0;1;0
-5.4.02.05.02.002;Dst …;0;1;0
+5.4.02.05.02.001;Belanja Bantuan Keuangan Khusus Daerah Provinsi atau Kabupaten/Kota kepada Desa ;0;1;0
+5.4.02.05.02.002;Dst ;0;1;0
 5.4.02.06.01.0001;Belanja Transfer Dana Otonomi Khusus Provinsi kepada Kabupaten/Kota;0;1;0
 5.4.02.06.01.001;Belanja Transfer Dana Otonomi Khusus Provinsi kepada Kabupaten/Kota ...;0;1;0
 5.4.02.06.01.002;Dst ...;0;1;0
@@ -6767,14 +6767,14 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 6.1.01.08.03.0001;Sisa Dana Kapitasi;0;0;1
 6.1.01.08.03.001;Sisa Dana Kapitasi;0;0;1
 6.1.02.01.01.0001;Pencairan Dana Cadangan;0;0;1
-6.1.02.01.01.001;Pencairan Dana Cadangan Nomor …;0;0;1
-6.1.02.01.01.002;Dst …;0;0;1
+6.1.02.01.01.001;Pencairan Dana Cadangan Nomor ;0;0;1
+6.1.02.01.01.002;Dst ;0;0;1
 6.1.03.01.01.0001;Hasil Penjualan Kekayaan Daerah yang Dipisahkan pada BUMN;0;0;1
 6.1.03.01.01.001;Hasil Penjualan Kekayaan Daerah yang Dipisahkan pada BUMN ...;0;0;1
 6.1.03.01.01.002;Dst ...;0;0;1
 6.1.03.02.01.0001;Hasil Penjualan Kekayaan Daerah yang Dipisahkan pada BUMD;0;0;1
 6.1.03.02.01.001;Hasil Penjualan Kekayaan Daerah yang Dipisahkan pada BUMD ...;0;0;1
-6.1.03.02.01.002;Dst …;0;0;1
+6.1.03.02.01.002;Dst ;0;0;1
 6.1.04.01.01.0001;Pinjaman Daerah dari Pemerintah Pusat-Penerusan Pinjaman Dalam Negeri-Jangka Menengah;0;0;1
 6.1.04.01.01.001;Pinjaman Daerah dari Pemerintah Pusat ...-Penerusan Pinjaman Dalam Negeri-Jangka Menengah;0;0;1
 6.1.04.01.01.002;Dst ...;0;0;1
@@ -6856,7 +6856,7 @@ Kode rekening;Nama Rekening;pendapatan;belanja;pembiayaan
 6.1.05.01.01.001;Penerimaan Kembali Pemberian Pinjaman Daerah kepada Pemerintah Pusat ...;0;0;1
 6.1.05.01.01.002;Dst ...;0;0;1
 6.1.05.01.02.0001;Penerimaan Kembali Investasi dalam Proyek Pembangunan kepada Pemerintah Pusat;0;0;1
-6.1.05.01.02.001;Penerimaan Kembali Investasi dalam Proyek Pembangunan kepada Pemerintah Pusat …;0;0;1
+6.1.05.01.02.001;Penerimaan Kembali Investasi dalam Proyek Pembangunan kepada Pemerintah Pusat ;0;0;1
 6.1.05.01.02.002;Dst ...;0;0;1
 6.1.05.02.01.0001;Penerimaan Kembali Pemberian Pinjaman Daerah kepada Pemerintah Daerah Lainnya;0;0;1
 6.1.05.02.01.001;Penerimaan Kembali Pemberian Pinjaman Daerah kepada Pemerintah Daerah Lainnya ...;0;0;1
