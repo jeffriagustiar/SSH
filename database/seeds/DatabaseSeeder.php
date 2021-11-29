@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(Fake $f)
     {
+        //insert dengan relasi
         for ($i=1; $i <= 10 ; $i++) { 
             DB::table('users')->insert([
                 'email' => $f->unique()->safeEmail,

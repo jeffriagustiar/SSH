@@ -26,14 +26,3 @@ $factory->define(User::class, function (Faker $f) {
         'created_at' => date_create()
     ];
 });
-
-$factory->define(Profiles::class, function (Faker $f) {
-    return [
-        'nama' => $f->name,
-        'phone' => $f->phoneNumber,
-        'kelamin' => 'Male',
-        'alamat' => $f->address,
-        'users_id' => User::orderByDesc('created_at')->first()->id,
-        'created_at' => date_create()
-    ];
-});
