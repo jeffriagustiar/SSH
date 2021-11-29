@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Profile;
+use App\Ssh;
 
 class HomeController extends Controller
 {
@@ -31,10 +32,13 @@ class HomeController extends Controller
                 ->findOrFail(Auth::user()->id);
         $users = Profile::with('users')
                 ->get();
+        $ssh = Ssh::with(['account'])
+                ->get();
         //dd($user);
         return view('home',[
             'user' => $user,
-            'users' => $users
+            'users' => $users,
+            'ssh' => $ssh
         ]);
     }
 }

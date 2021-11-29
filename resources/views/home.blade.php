@@ -17,6 +17,14 @@
                     {{ __('You are logged in!') }} {{ $user->profile->nama }}
                 </div>
 
+                @forelse ($ssh as $s)
+                    <div class="card-header">{{ $s->account->kode_rekening." ".$s->harga }}</div>
+                @empty
+                    <div class="card-header">{{ __('Kosong') }}</div>
+                @endforelse
+
+                <br><br><br><br><br>
+
                 @forelse ($users as $u)
                 <div class="card-body">
                     @if (session('status'))
@@ -28,7 +36,7 @@
                     Nama->{{ $u->nama }} email->{{ $u->users->email }}
                 </div>
                 @empty
-                <div class="card-header">{{ __('Kosong') }}</div>
+                    <div class="card-header">{{ __('Kosong') }}</div>
                 @endforelse
 
             </div>

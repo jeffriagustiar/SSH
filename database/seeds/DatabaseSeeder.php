@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     public function run(Fake $f)
     {
         //insert dengan relasi
-        for ($i=1; $i <= 10 ; $i++) { 
+        for ($i=1; $i <= 1 ; $i++) { 
             DB::table('users')->insert([
                 'email' => $f->unique()->safeEmail,
                 'password' => Hash::make('123456'),
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                 'phone' => $f->phoneNumber,
                 'kelamin' => 'Male',
                 'alamat' => $f->address,
-                'users_id' => User::orderByDesc('created_at')->first()->id,
+                'users_id' => User::orderByDesc('id')->first()->id,
                 'created_at' => date_create()
             ]);
         }
