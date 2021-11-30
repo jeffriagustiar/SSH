@@ -13,6 +13,7 @@ use App\Standard;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
+
 class HomeController extends Controller
 {
     /**
@@ -36,8 +37,8 @@ class HomeController extends Controller
                 ->findOrFail(Auth::user()->id);
         $users = Profile::with(['users'])
                 ->get();
-        $ssh = Ssh::with(['standard'])
-                ->get();
+        // $ssh = Ssh::with(['standard'])
+        //         ->get();
         // $ssh = Ssh::with(['account'])
         //         ->get();
         //dd($ssh);
@@ -45,7 +46,7 @@ class HomeController extends Controller
         return view('home',[
             'user' => $user,
             'users' => $users,
-            'ssh' => $ssh
+            // 'ssh' => $ssh
         ]);
     }
 

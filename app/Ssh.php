@@ -12,7 +12,7 @@ class Ssh extends Model
     protected $table = 'ssh';
 
     protected $fillable = [
-        'kode','uraian','spek','satuan','harga'
+        'uraian','spek','satuan','harga'
     ];
 
     // public function account()
@@ -20,10 +20,10 @@ class Ssh extends Model
     //     return $this->belongsTo(Account::class,'kode','kode_rekening');
     // }
 
-    public function standard()
-    {
-        return $this->BelongsTo(Standard::class,'kode','kode_standar');
-    }
+    // public function standard()
+    // {
+    //     return $this->BelongsTo(Standard::class,'kode','kode_standar');
+    // }
 
     // public function standard()
     // {

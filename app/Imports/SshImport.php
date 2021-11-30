@@ -4,9 +4,17 @@ namespace App\Imports;
 
 use App\Ssh;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class SshImport implements ToModel
+class SshImport implements ToModel, WithStartRow
 {
+    /**
+     * @return int
+     */
+    public function startRow(): int
+    {
+        return 2;
+    }
     /**
     * @param array $row
     *

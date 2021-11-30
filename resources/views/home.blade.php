@@ -25,11 +25,11 @@
 
                 <br>
 
-                @forelse ($ssh as $s)
+                {{-- @forelse ($ssh as $s)
                     <div class="card-header">{{ $s->standard->kode_standar ." -> ". $s->standard->nama_standar ." -> ". number_format($s->harga) ." -> ". $s->standard->kelompok }}</div>
                 @empty
                     <div class="card-header">{{ __('Kosong') }}</div>
-                @endforelse
+                @endforelse --}}
 
                 <br>
 
