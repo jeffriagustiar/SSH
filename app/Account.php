@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class Account extends Model
 {
-    protected $table = 'accounts';
+    //protected $table = 'accounts';
 
     protected $fillable =[
         'kode_rekening',
