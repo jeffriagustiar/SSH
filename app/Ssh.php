@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Account;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Standard;
 
 class Ssh extends Model
 {
@@ -13,8 +15,13 @@ class Ssh extends Model
         'kode','uraian','spek','satuan','harga'
     ];
 
-    public function account()
+    // public function account()
+    // {
+    //     return $this->belongsTo(Account::class,'kode','kode_rekening');
+    // }
+
+    public function standard()
     {
-        return $this->belongsTo(Account::class,'kode','kode_rekening');
+        return $this->BelongsTo(Standard::class,'kode','kode_standar');
     }
 }
