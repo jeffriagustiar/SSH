@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class CreateSshTable extends Migration
 {
@@ -15,7 +16,7 @@ class CreateSshTable extends Migration
     {
         Schema::create('ssh', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
+            $table->string('kode')->nullable();
             $table->string('uraian');
             $table->string('spek');
             $table->string('satuan');

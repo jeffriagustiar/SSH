@@ -15,7 +15,7 @@ class CreateHspkTable extends Migration
     {
         Schema::create('hspk', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
+            $table->string('kode')->nullable();
             $table->string('uraian');
             $table->string('spek');
             $table->string('satuan');

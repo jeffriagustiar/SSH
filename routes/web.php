@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/importssh', 'HomeController@importSsh')->name('importSsh');
 
 Route::get('/regis', 'RegisterController@create')->name('regis');
 

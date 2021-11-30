@@ -15,7 +15,7 @@ class CreateSbuTable extends Migration
     {
         Schema::create('sbu', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
+            $table->string('kode')->nullable();
             $table->string('uraian');
             $table->string('spek');
             $table->string('satuan');
