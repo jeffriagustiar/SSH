@@ -22,14 +22,20 @@
   @yield('content')
   <!-- /.content-wrapper -->
 
+  <!-- Control Sidebar -->
+  {{-- <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside> --}}
+  <!-- /.control-sidebar -->
+
   <!-- Main Footer -->
   @include('includes.footer')
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
+
 @stack('pre-script')
 @include('includes.script')
 @stack('addon-script')
-
 </body>
 </html>
