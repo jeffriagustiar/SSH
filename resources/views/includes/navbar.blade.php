@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-      <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <img src="{{ asset('adminlte/dist/img/logo.png') }}" alt="Logo" class="brand-image elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Kota Payakumbuh</span>
     </a>
 
     <!-- Sidebar -->
@@ -19,7 +19,7 @@
             <a href="{{ route('login') }}" class="nav-link">
               <i class="nav-icon fas fa-sign-in-alt"></i>
               <p>
-                Login
+                Sign-In
               </p>
             </a>
           </li>

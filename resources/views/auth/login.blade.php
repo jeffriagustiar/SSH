@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+  Log-In
+@endsection
+
 @section('content')
 <div class="login-box">
     <!-- /.login-logo -->

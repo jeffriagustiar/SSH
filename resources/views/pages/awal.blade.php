@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Awal
+    Dashboard
 @endsection
 
 @section('content')
