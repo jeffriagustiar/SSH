@@ -50,6 +50,28 @@ class HomeController extends Controller
         ]);
     }
 
+    public function profile()
+    {
+        $user = User::findOrFail(Auth::user()->id);
+
+        return view('pages.profile',[
+            'user' => $user
+        ]);
+    }
+
+    public function profileEdit(Request $request, $id)
+    {
+        $data = $request->all();
+
+        $item = Profile::findOrFail($id);
+
+        $item->update($data);
+
+        // dd($data);
+        // dd($item);
+        return redirect()->route('home-profile');
+    }
+
     public function importSsh(Request $request)
     {
         $this->validate($request, [

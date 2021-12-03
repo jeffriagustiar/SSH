@@ -34,7 +34,7 @@
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
           <img src="{{ asset('adminlte/dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
-          <span class="d-none d-md-inline">{{ $user->profile->nama }}</span>
+          <span class="d-none d-md-inline">{{ Auth::user()->profile->nama }}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- User image -->
@@ -42,14 +42,14 @@
             <img src="{{ asset('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
 
             <p>
-              {{ $user->profile->nama }} 
+              {{ Auth::user()->profile->nama }} 
               {{-- <br> {{ $user->email }} --}}
-              <small>Member since {{ $user->created_at->format('M') }}. {{ $user->created_at->format('Y') }}</small>
+              <small>Member since {{ Auth::user()->created_at->format('M') }}. {{ Auth::user()->created_at->format('Y') }}</small>
             </p>
           </li>
           <!-- Menu Footer-->
           <li class="user-footer">
-            <a href="#" class="btn btn-default btn-flat">Profile</a>
+            <a href="{{ route('home-profile') }}" class="btn btn-default btn-flat">Profile</a>
             <a href="{{ route('logout') }}" 
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" 

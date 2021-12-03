@@ -11,11 +11,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $user = User::with(['profile'])
-                        ->findOrFail(Auth::user()->id);
+        // $user = User::with(['profile'])
+        //                 ->findOrFail(Auth::user()->id);
         // dd($user);
-        return view('pages.awal',[
-            'user' => $user
-        ]);
+        return view('pages.awal');
     }
 }
