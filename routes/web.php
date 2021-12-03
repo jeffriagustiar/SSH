@@ -21,6 +21,8 @@ Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/profile', 'HomeController@profile')->name('home-profile');
 Route::post('/home/profile/{id}', 'HomeController@profileEdit')->name('home-profile-edit');
+
+Route::get('/ssh','SshController@index')->name('data-ssh');
 Route::post('/importssh', 'HomeController@importSsh')->name('importSsh');
 
 Route::get('/regis', 'RegisterController@create')->name('regis');
