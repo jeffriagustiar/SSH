@@ -17,13 +17,14 @@ class SshController extends Controller
     {
         if(request()->ajax())
         {
-            $ssh = Ssh::leftjoin('components','ssh.id','=','components.komponen_id')
+            $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
                 ->whereNull('components.komponen_id')
                 ->where('ssh.users_id',Auth::user()->id)
                 ->get();
             $query = $ssh;
 
             return DataTables::of($query)
+                ->addIndexColumn()
                 ->addColumn('action', function($item){
                     return '
                         <div class="btn-group">

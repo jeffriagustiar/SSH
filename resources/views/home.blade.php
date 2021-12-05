@@ -41,7 +41,7 @@
                         </div>
                     @endif
 
-                   AA {{ $u->harga }}
+                   AA {{ $u->kelompok }}
                 </div>
                 @empty
                     <div class="card-header">{{ __('Kosong') }}</div>

@@ -36,7 +36,7 @@ class HomeController extends Controller
     {
         $user = User::with(['profile'])
                 ->findOrFail(Auth::user()->id);
-        $ssh = Ssh::leftjoin('components','ssh.id','=','components.komponen_id')
+        $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
                 ->whereNull('components.komponen_id')
                 ->get();
         // $ssh = Components::get();
@@ -46,7 +46,7 @@ class HomeController extends Controller
         //         ->get();
         // $ssh = Ssh::with(['account'])
         //         ->get();
-        //dd($ssh);
+        // dd($ssh);
 
         return view('home',[
             'user' => $user,

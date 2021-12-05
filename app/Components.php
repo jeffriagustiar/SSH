@@ -13,6 +13,6 @@ class Components extends Model
 
     public function ssh()
     {
-        return $this->belongsTo(Ssh::class,'komponen_id','id');
+        return $this->belongsTo(Ssh::class,'komponen_id','ssh_id');
     }
 }

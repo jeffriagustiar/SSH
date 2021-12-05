@@ -127,7 +127,7 @@
         url: '{!! url()->current() !!}'
       },
       columns:[
-        {data: 'id',name: 'id'},
+        {data: 'DT_RowIndex', name: 'DT_RowIndex'},
         {data: 'uraian',name: 'uraian'},
         {data: 'spek',name: 'spek'},
         {data: 'satuan',name: 'satuan'},

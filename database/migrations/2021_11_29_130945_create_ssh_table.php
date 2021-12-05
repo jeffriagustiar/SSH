@@ -15,7 +15,7 @@ class CreateSshTable extends Migration
     public function up()
     {
         Schema::create('ssh', function (Blueprint $table) {
-            $table->id();
+            $table->string('ssh_id');
             $table->string('kode')->nullable();
             $table->string('uraian');
             $table->string('spek');

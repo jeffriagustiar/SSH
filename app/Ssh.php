@@ -13,12 +13,12 @@ class Ssh extends Model
     protected $table = 'ssh';
 
     protected $fillable = [
-        'uraian','spek','satuan','harga','users_id','kelompok'
+        'ssh_id','uraian','spek','satuan','harga','users_id','kelompok'
     ];
 
     public function components()
     {
-        return $this->belongsTo(Components::class,'id','komponen_id')
+        return $this->belongsTo(Components::class,'ssh_id','komponen_id')
                     ->whereNull('komponen_id');
     }
 
