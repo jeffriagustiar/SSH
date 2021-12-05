@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Account;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Standard;
+use App\Components;
 
 class Ssh extends Model
 {
@@ -14,6 +15,12 @@ class Ssh extends Model
     protected $fillable = [
         'uraian','spek','satuan','harga','users_id','kelompok'
     ];
+
+    public function components()
+    {
+        return $this->belongsTo(Components::class,'id','komponen_id')
+                    ->whereNull('komponen_id');
+    }
 
     // public function account()
     // {

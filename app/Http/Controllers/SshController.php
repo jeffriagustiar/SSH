@@ -9,13 +9,19 @@ use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SshImport;
 
+use Illuminate\Support\Facades\Auth;
+
 class SshController extends Controller
 {
     public function index(Request $request)
     {
         if(request()->ajax())
         {
-            $query = Ssh::query();
+            $ssh = Ssh::leftjoin('components','ssh.id','=','components.komponen_id')
+                ->whereNull('components.komponen_id')
+                ->where('ssh.users_id',Auth::user()->id)
+                ->get();
+            $query = $ssh;
 
             return DataTables::of($query)
                 ->addColumn('action', function($item){

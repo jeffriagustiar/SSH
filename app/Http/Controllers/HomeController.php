@@ -10,6 +10,7 @@ use App\User;
 use App\Profile;
 use App\Ssh;
 use App\Standard;
+use App\Components;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -35,8 +36,12 @@ class HomeController extends Controller
     {
         $user = User::with(['profile'])
                 ->findOrFail(Auth::user()->id);
-        $users = Profile::with(['users'])
+        $ssh = Ssh::leftjoin('components','ssh.id','=','components.komponen_id')
+                ->whereNull('components.komponen_id')
                 ->get();
+        // $ssh = Components::get();
+        // $users = Profile::with(['users'])
+        //         ->get();
         // $ssh = Ssh::with(['standard'])
         //         ->get();
         // $ssh = Ssh::with(['account'])
@@ -45,7 +50,7 @@ class HomeController extends Controller
 
         return view('home',[
             'user' => $user,
-            'users' => $users,
+            'ssh' => $ssh,
             // 'ssh' => $ssh
         ]);
     }

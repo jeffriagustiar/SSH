@@ -33,7 +33,7 @@
 
                 <br>
 
-                @forelse ($users as $u)
+                @forelse ($ssh as $u)
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -41,7 +41,7 @@
                         </div>
                     @endif
 
-                    Nama->{{ $u->nama }} email->{{ $u->users->email }}
+                   AA {{ $u->harga }}
                 </div>
                 @empty
                     <div class="card-header">{{ __('Kosong') }}</div>
