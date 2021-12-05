@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use App\Ssh;
+use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\SshImport;
 
 class SshController extends Controller
 {
@@ -44,4 +47,24 @@ class SshController extends Controller
 
         return view('pages.ssh_table');
     }
+
+    public function importSsh(Request $request)
+    {
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+
+        $nm_file = $file->hashName();
+
+        $path = $file->storeAs('public/excel/',$nm_file);
+
+        Excel::import(new SshImport(), storage_path('app/public/excel/'.$nm_file));
+
+        Storage::delete($path);
+        
+        return redirect()->route('data-ssh');
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Ssh;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
@@ -27,6 +28,8 @@ class SshImport implements ToModel, WithStartRow
             'spek' => $row[1],
             'satuan' => $row[2],
             'harga' => $row[3],
+            'users_id' => Auth::user()->id,
+            'kelompok' => '1',
         ]);
     }
 }

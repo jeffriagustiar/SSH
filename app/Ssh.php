@@ -12,7 +12,7 @@ class Ssh extends Model
     protected $table = 'ssh';
 
     protected $fillable = [
-        'uraian','spek','satuan','harga'
+        'uraian','spek','satuan','harga','users_id','kelompok'
     ];
 
     // public function account()
