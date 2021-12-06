@@ -39,6 +39,7 @@ class HomeController extends Controller
         $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
                 ->whereNull('components.komponen_id')
                 ->get();
+        $standard = Standard::get();
         // $ssh = Components::get();
         // $users = Profile::with(['users'])
         //         ->get();
@@ -51,6 +52,7 @@ class HomeController extends Controller
         return view('home',[
             'user' => $user,
             'ssh' => $ssh,
+            'stand' => $standard,
             // 'ssh' => $ssh
         ]);
     }

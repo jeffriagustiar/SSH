@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use App\Ssh;
+use App\Standard;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SshImport;
@@ -70,6 +71,25 @@ class SshController extends Controller
         $item->delete();
 
         return redirect()->route('data-ssh');
+    }
+
+    public function decision(Request $request)
+    {
+        $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
+            ->whereNull('components.komponen_id')
+            // ->where('ssh.users_id',Auth::user()->id)
+            ->get();
+            
+            $standard = Standard::get();
+
+            
+
+            
+
+        return view('pages.ssh_decision',[
+            'ssh' => $ssh,
+            'stand' => $standard
+        ]);
     }
 
 }
