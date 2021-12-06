@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
 @endpush
 
 @section('content')
@@ -66,18 +67,16 @@
                               @php
                                 $i=0;
                               @endphp
-                              @foreach ($ssh as $s)
+                              @foreach ($ssh as $ss)
                               <tr>
                                 <td>{{ $i += 1 }}</td>
-                                <td>{{ $s->uraian }}</td>
-                                <td>{{ $s->spek }}</td>
-                                <td>{{ $s->satuan }}</td>
-                                <td>{{ number_format($s->harga) }}</td>
+                                <td>{{ $ss->uraian }}</td>
+                                <td>{{ $ss->spek }}</td>
+                                <td>{{ $ss->satuan }}</td>
+                                <td>{{ number_format($ss->harga) }}</td>
                                 <td>
-                                  <form action="{{ route('data-ssh-add',$s->ssh_id) }}" method="POST" enctype="multipart/form-data">
+                                  <form action="{{ route('data-ssh-add',$ss->ssh_id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    
-                                    <button type="submit" class="btn btn-block btn-success">Save</button>
                                     
                                     <select class="form-control select2" style="width: 100%;" name="standard">
                                       @forelse ($stand as $s)
@@ -86,7 +85,16 @@
                                         <option>Kosong</option>
                                       @endforelse
                                     </select>
+                                    
+                                    <button type="submit" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Save</button>
+                                    
+                                    {{-- <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#modal-default"
+                                    data-id="{{ $ss->ssh_id }}">
+                                      <i class="fas fa-paper-plane"></i>
+                                      Kirim Pesan
+                                    </button> --}}
                                   </form>
+                                  
 
                                   {{-- <form action="{{ route('data-ssh-add',$s->ssh_id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -104,6 +112,7 @@
 
                                 </td> 
                               </tr> 
+                              
                               @endforeach
                             </tbody>
                           </thead>
@@ -146,6 +155,37 @@
     </section>
     <!-- /.content -->
   </div>
+
+  {{-- <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Kirim Pesan Ke User{{ $ss->ssh_id }}</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="{{ route('data-ssh-pesan') }}" method="post" enctype="multipart/form-data">
+          @csrf
+          <div class="modal-body">
+            <div class="card-body">
+              <input type="text" id="ssh_id" name="ssh_id" value="">
+              <textarea id="summernote" name="pesan">
+                
+              </textarea>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div> --}}
+
 @endsection
 
 @push('addon-script')
@@ -162,6 +202,9 @@
 
 <!-- Select2 -->
 <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
+<script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+
+
 
 <script>
 
@@ -183,6 +226,15 @@ $(function () {
     $('.select2').select2()
 
   })  
+
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+  })
+
+
+
 
 </script>
 

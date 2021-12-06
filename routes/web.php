@@ -27,6 +27,7 @@ Route::post('/importssh', 'SshController@importSsh')->name('importSsh');
 Route::delete('/ssh/{id}', 'SshController@destroy')->name('ssh-delete');
 Route::get('/ssh/decision','SshController@decision')->name('data-keputusan');
 Route::post('/ssh/decision/{id}','SshController@terimaSsh')->name('data-ssh-add');
+Route::post('/ssh/decision/msg','SshController@terimaSsh')->name('data-ssh-pesan');
 
 // Route::post('/importssh', 'HomeController@importSsh')->name('importSsh');
 
