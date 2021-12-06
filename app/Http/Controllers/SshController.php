@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use App\Ssh;
 use App\Standard;
+use App\Components;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SshImport;
@@ -81,15 +82,21 @@ class SshController extends Controller
             ->get();
             
             $standard = Standard::get();
-
             
-
-            
-
         return view('pages.ssh_decision',[
             'ssh' => $ssh,
             'stand' => $standard
         ]);
+    }
+
+    public function terimaSsh(Request $request,$id)
+    {
+        $a=Components::create([
+            'standar_id' => $request['standard'],
+            'komponen_id' => $id
+        ]);
+
+        return redirect()->route('data-keputusan');
     }
 
 }

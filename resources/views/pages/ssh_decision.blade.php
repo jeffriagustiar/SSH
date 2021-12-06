@@ -25,7 +25,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
               <li class="breadcrumb-item active">List SSH</li>
             </ol>
           </div>
@@ -74,10 +74,12 @@
                                 <td>{{ $s->satuan }}</td>
                                 <td>{{ number_format($s->harga) }}</td>
                                 <td>
-                                  <form action="#" method="post" enctype="multipart/form-data">
+                                  <form action="{{ route('data-ssh-add',$s->ssh_id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <button type="button" class="btn btn-block btn-success btn-xs">Save</button>
-                                    <select class="form-control select2" style="width: 100%;">
+                                    
+                                    <button type="submit" class="btn btn-block btn-success">Save</button>
+                                    
+                                    <select class="form-control select2" style="width: 100%;" name="standard">
                                       @forelse ($stand as $s)
                                         <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
                                       @empty
@@ -85,6 +87,21 @@
                                       @endforelse
                                     </select>
                                   </form>
+
+                                  {{-- <form action="{{ route('data-ssh-add',$s->ssh_id) }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        Hapus
+                                    </button>
+                                    <select class="form-control select2" style="width: 100%;" name="standard">
+                                      @forelse ($stand as $s)
+                                        <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
+                                      @empty
+                                        <option>Kosong</option>
+                                      @endforelse
+                                    </select>
+                                  </form> --}}
+
                                 </td> 
                               </tr> 
                               @endforeach
