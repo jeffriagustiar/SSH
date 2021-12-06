@@ -28,22 +28,12 @@ class SshController extends Controller
                 ->addColumn('action', function($item){
                     return '
                         <div class="btn-group">
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown" >
-                                    Aksi
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">
-                                        Edit
-                                    </a>
-                                    <form action="#" method="POST">
+                                    <form action="'. route('ssh-delete',$item->ssh_id) .'" method="POST">
                                         '. method_field('delete') . csrf_field() .'
-                                        <button type="submit" class="dropdown-item text-danger">
-                                            Hapus
+                                        <button type="submit" class="btn btn-block btn-danger">
+                                            Delete
                                         </button>
                                     </form>
-                                </div>
-                            </div>
                         </div>
                     ';
                 })
@@ -71,6 +61,14 @@ class SshController extends Controller
 
         Storage::delete($path);
         
+        return redirect()->route('data-ssh');
+    }
+
+    public function destroy($id)
+    {
+        $item = Ssh::where('ssh_id',$id);
+        $item->delete();
+
         return redirect()->route('data-ssh');
     }
 

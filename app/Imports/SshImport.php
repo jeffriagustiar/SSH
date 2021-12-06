@@ -24,7 +24,7 @@ class SshImport implements ToModel, WithStartRow
     public function model(array $row)
     {
         return new Ssh([
-            'ssh_id' => 'SSH'. mt_rand(00000,99999),
+            'ssh_id' => 'SSH-'. mt_rand(000000,999999),
             'uraian' => $row[0],
             'spek' => $row[1],
             'satuan' => $row[2],

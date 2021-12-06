@@ -14,10 +14,10 @@ class CreateSbuTable extends Migration
     public function up()
     {
         Schema::create('sbu', function (Blueprint $table) {
-            $table->string('sbu_id');
+            $table->string('sbu_id')->primary();
             $table->string('kode')->nullable();
             $table->string('uraian');
-            $table->string('spek');
+            $table->string('spek')->nullable();
             $table->string('satuan');
             $table->string('harga');
             $table->timestamps();

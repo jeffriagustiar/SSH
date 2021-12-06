@@ -15,10 +15,10 @@ class CreateSshTable extends Migration
     public function up()
     {
         Schema::create('ssh', function (Blueprint $table) {
-            $table->string('ssh_id');
+            $table->string('ssh_id')->primary();
             $table->string('kode')->nullable();
             $table->string('uraian');
-            $table->string('spek');
+            $table->string('spek')->nullable();
             $table->string('satuan');
             $table->string('harga');
             $table->timestamps();

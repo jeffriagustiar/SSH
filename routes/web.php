@@ -24,6 +24,7 @@ Route::post('/home/profile/{id}', 'HomeController@profileEdit')->name('home-prof
 
 Route::get('/ssh','SshController@index')->name('data-ssh');
 Route::post('/importssh', 'SshController@importSsh')->name('importSsh');
+Route::delete('/ssh/{id}', 'SshController@destroy')->name('ssh-delete');
 
 // Route::post('/importssh', 'HomeController@importSsh')->name('importSsh');
 

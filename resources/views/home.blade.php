@@ -1,4 +1,14 @@
 @extends('layouts.app')
+@section('title')
+    Tes
+@endsection
+
+@push('addon-style')
+<!-- Select2 -->
+<link rel="stylesheet" href="adminlte/plugins/select2/css/select2.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
+@endpush
 
 @section('content')
 <div class="container">
@@ -33,6 +43,19 @@
 
                 <br>
 
+                <div class="form-group">
+                    <label>Minimal</label>
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Alabama</option>
+                      <option>Alaska</option>
+                      <option>California</option>
+                      <option>Delaware</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Washington</option>
+                    </select>
+                  </div>
+
                 @forelse ($ssh as $u)
                 <div class="card-body">
                     @if (session('status'))
@@ -41,7 +64,7 @@
                         </div>
                     @endif
 
-                   AA {{ $u->kelompok }}
+                   AA {{ $u->kelompok }}{{ $u->ssh_id }}
                 </div>
                 @empty
                     <div class="card-header">{{ __('Kosong') }}</div>
@@ -52,3 +75,15 @@
     </div>
 </div>
 @endsection
+
+@push('addon-script')
+<!-- Select2 -->
+<script src="adminlte/plugins/select2/js/select2.full.min.js"></script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  })
+</script>
+@endpush
