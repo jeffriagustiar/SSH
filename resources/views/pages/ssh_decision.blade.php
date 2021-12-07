@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    List SSH
+   List SSH
 @endsection
 
 @push('addon-style')
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
     
-  {{-- <link rel="stylesheet" href="adminlte/plugins/dropzone/min/dropzone.min.css"> --}}
+  <link rel="stylesheet" href="{{ asset('adminlte/plugins/dropzone/min/dropzone.min.css') }}">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
   <!-- Theme style -->
@@ -40,6 +40,7 @@
         <div class="row">
           <div class="col-12">
             <!-- Default box -->
+
             {{-- <div class="col-md-16"> --}}
               <div class="card">
                 <div class="card-header p-2">
@@ -51,9 +52,10 @@
                 <div class="card-body">
                   <div class="tab-content">
                     <div class="active tab-pane" id="listssh">
+                      
                       <!-- Post -->
                       <div class="card-body pad table-responsive">
-                        <table class="table table-bordered table-striped " id="dataSsh" >
+                        <table class="table table-bordered table-striped " id="sshTable" >
                           <thead>
                             <tr>
                               <th>ID</th>
@@ -63,58 +65,6 @@
                               <th>Harga</th>
                               <th>Aksi</th>
                             </tr>
-                            <tbody>
-                              @php
-                                $i=0;
-                              @endphp
-                              @foreach ($ssh as $ss)
-                              <tr>
-                                <td>{{ $i += 1 }}</td>
-                                <td>{{ $ss->uraian }}</td>
-                                <td>{{ $ss->spek }}</td>
-                                <td>{{ $ss->satuan }}</td>
-                                <td>{{ number_format($ss->harga) }}</td>
-                                <td>
-                                  <form action="{{ route('data-ssh-add',$ss->ssh_id) }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    
-                                    <select class="form-control select2" style="width: 100%;" name="standard">
-                                      @forelse ($stand as $s)
-                                        <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
-                                      @empty
-                                        <option>Kosong</option>
-                                      @endforelse
-                                    </select>
-                                    
-                                    <button type="submit" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Save</button>
-                                    
-                                    {{-- <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#modal-default"
-                                    data-id="{{ $ss->ssh_id }}">
-                                      <i class="fas fa-paper-plane"></i>
-                                      Kirim Pesan
-                                    </button> --}}
-                                  </form>
-                                  
-
-                                  {{-- <form action="{{ route('data-ssh-add',$s->ssh_id) }}" method="POST" enctype="multipart/form-data">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item text-danger">
-                                        Hapus
-                                    </button>
-                                    <select class="form-control select2" style="width: 100%;" name="standard">
-                                      @forelse ($stand as $s)
-                                        <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
-                                      @empty
-                                        <option>Kosong</option>
-                                      @endforelse
-                                    </select>
-                                  </form> --}}
-
-                                </td> 
-                              </tr> 
-                              
-                              @endforeach
-                            </tbody>
                           </thead>
                         </table>
                       </div>
@@ -152,20 +102,26 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- /.content -->
-  </div>
 
-  {{-- <div class="modal fade" id="modal-default">
+      {{-- <button type="submit" class="btn btn-block btn-success" style="width: 50%;"><i class="fas fa-plus"></i> Save</button>
+                                    
+                                    <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#modal-default"
+                                    data-id="{{ $ss->ssh_id }}">
+                                      <i class="fas fa-paper-plane"></i>
+                                      Kirim Pesan
+                                    </button> --}}
+
+
+    <div class="modal fade" id="modal-default">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Kirim Pesan Ke User{{ $ss->ssh_id }}</h4>
+          <h4 class="modal-title">Kirim Pesan Ke User</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="{{ route('data-ssh-pesan') }}" method="post" enctype="multipart/form-data">
+        <form action="#" method="post" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
             <div class="card-body">
@@ -184,8 +140,54 @@
       <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
-  </div> --}}
+  </div>
 
+
+  <div class="modal fade" id="modal-add">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Tambahkan Kode</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="#" method="post" enctype="multipart/form-data" id="m-add">
+          @csrf
+
+          <div class="modal-body">
+            <div class="card-body">
+              <input type="text" name="ssh_id" id="ssh_id" class="form-control">
+            </div>
+          </div>
+
+          <div class="modal-body">
+            <div class="card-body">
+              <select class="form-control select2" style="width: 100%;" name="standard">
+                @forelse ($stand as $s)
+                  <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
+                @empty
+                  <option>Kosong</option>
+                @endforelse
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+
+    </section>
+    <!-- /.content -->
+  </div>
 @endsection
 
 @push('addon-script')
@@ -204,26 +206,43 @@
 <script src="{{ asset('adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
-
-
 <script>
-
-
-$(function () {
-    $("#dataSsh").DataTable({
-      processing : true,
-      ordering: true,
-      "responsive": true, 
-      "lengthChange": true, 
-      "autoWidth": true,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    });
     
-  });
+    var datatable = $('#sshTable').DataTable({
+      processing : true,
+      serverSide: true,
+      ordering: true,
+      lengthChange: true, 
+      // dom: 'Bfrtip',
+      //   buttons: [
+      //       'copy', 'csv', 'excel', 'pdf', 'print'
+      //   ],
+      ajax:{
+        url: '{!! url()->current() !!}'
+      },
+      columns:[
+        {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+        {data: 'uraian',name: 'uraian'},
+        {data: 'spek',name: 'spek'},
+        {data: 'satuan',name: 'satuan'},
+        {data: 'harga',name: 'harga', 
+            render: function (data, type, row, meta) {
+            return meta.settings.fnFormatNumber(row.harga);
+        }
+        },
+        {
+          data: 'action',
+          name: 'action',
+          orderable: false,
+          searcable: false,
+          width: '15%'
+        },
+      ],
+    })
 
   $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
+  //Initialize Select2 Elements
+  $('.select2').select2()
 
   })  
 
@@ -233,8 +252,7 @@ $(function () {
 
   })
 
-
-
+ 
 
 </script>
 

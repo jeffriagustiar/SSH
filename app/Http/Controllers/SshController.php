@@ -76,15 +76,42 @@ class SshController extends Controller
 
     public function decision(Request $request)
     {
-        $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
-            ->whereNull('components.komponen_id')
-            // ->where('ssh.users_id',Auth::user()->id)
-            ->get();
-            
-            $standard = Standard::get();
+        $standard = Standard::get();
+
+        if(request()->ajax())
+        {
+            $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
+                ->whereNull('components.komponen_id')
+                //->where('ssh.users_id',Auth::user()->id)
+                ->get();
+            $query = $ssh;
+
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->addColumn('action', function($item){
+                    return '
+                        <div class="btn-group">
+                                    <form action="'. route('ssh-delete',$item->ssh_id) .'" method="POST">
+                                        '. method_field('delete') . csrf_field() .'
+                                        <a href="#" class="btn btn-block btn-success btn-add"  
+                                            data-toggle="modal" data-target="#modal-add" >
+                                            <i class="fas fa-plus"></i>
+                                            Save
+                                        </a>
+                                        <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#modal-default" data-id="">
+                                            <i class="fas fa-paper-plane"></i>
+                                            Kirim Pesan
+                                        </button>
+                                    </form>
+                        </div>
+                    ';
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
             
         return view('pages.ssh_decision',[
-            'ssh' => $ssh,
             'stand' => $standard
         ]);
     }
