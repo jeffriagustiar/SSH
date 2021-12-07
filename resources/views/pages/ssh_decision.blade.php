@@ -103,86 +103,7 @@
         </div>
       </div>
 
-      {{-- <button type="submit" class="btn btn-block btn-success" style="width: 50%;"><i class="fas fa-plus"></i> Save</button>
-                                    
-                                    <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#modal-default"
-                                    data-id="{{ $ss->ssh_id }}">
-                                      <i class="fas fa-paper-plane"></i>
-                                      Kirim Pesan
-                                    </button> --}}
 
-
-    <div class="modal fade" id="modal-default">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Kirim Pesan Ke User</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form action="#" method="post" enctype="multipart/form-data">
-          @csrf
-          <div class="modal-body">
-            <div class="card-body">
-              <input type="text" id="ssh_id" name="ssh_id" value="">
-              <textarea id="summernote" name="pesan">
-                
-              </textarea>
-            </div>
-          </div>
-          <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-
-
-  <div class="modal fade" id="modal-add">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Tambahkan Kode</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form action="#" method="post" enctype="multipart/form-data" id="m-add">
-          @csrf
-
-          <div class="modal-body">
-            <div class="card-body">
-              <input type="text" name="ssh_id" id="ssh_id" class="form-control">
-            </div>
-          </div>
-
-          <div class="modal-body">
-            <div class="card-body">
-              <select class="form-control select2" style="width: 100%;" name="standard">
-                @forelse ($stand as $s)
-                  <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
-                @empty
-                  <option>Kosong</option>
-                @endforelse
-              </select>
-            </div>
-          </div>
-
-          <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
 
 
     </section>
@@ -239,6 +160,8 @@
         },
       ],
     })
+
+    
 
   $(function () {
   //Initialize Select2 Elements

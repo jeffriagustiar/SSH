@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 use App\Ssh;
@@ -10,7 +11,7 @@ use App\Components;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SshImport;
-
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class SshController extends Controller
@@ -91,18 +92,11 @@ class SshController extends Controller
                 ->addColumn('action', function($item){
                     return '
                         <div class="btn-group">
-                                    <form action="'. route('ssh-delete',$item->ssh_id) .'" method="POST">
-                                        '. method_field('delete') . csrf_field() .'
-                                        <a href="#" class="btn btn-block btn-success btn-add"  
-                                            data-toggle="modal" data-target="#modal-add" >
+                                    
+                                        <a href="'.route('data-ssh-add-d',$item->ssh_id).'" class="btn btn-block btn-success"  >
                                             <i class="fas fa-plus"></i>
-                                            Save
+                                            Add
                                         </a>
-                                        <button type="button" class="btn btn-block btn-warning" data-toggle="modal" data-target="#modal-default" data-id="">
-                                            <i class="fas fa-paper-plane"></i>
-                                            Kirim Pesan
-                                        </button>
-                                    </form>
                         </div>
                     ';
                 })
@@ -116,14 +110,27 @@ class SshController extends Controller
         ]);
     }
 
-    public function terimaSsh(Request $request,$id)
+    public function sshDA( $id)
     {
-        $a=Components::create([
-            'standar_id' => $request['standard'],
-            'komponen_id' => $id
-        ]);
+        $s = Ssh::where('ssh_id',$id)->firstOrFail();
+        $standard = Standard::get();
+        $acc = Account::get();
 
-        return redirect()->route('data-keputusan');
+        // dd($s);
+
+        return view('pages.ssh_decision_add',[
+            'ssh' => $s,
+            'stand' => $standard,
+            'acc' => $acc
+        ]);
+    }
+
+    public function terimaSsh(Request $request)
+    {
+        $data=$request->all();
+        dd($data);
+
+        // return redirect()->route('data-keputusan');
     }
 
 }

@@ -16,11 +16,11 @@ class Ssh extends Model
         'ssh_id','uraian','spek','satuan','harga','users_id','kelompok','pesan'
     ];
 
-    public function components()
-    {
-        return $this->belongsTo(Components::class,'ssh_id','komponen_id')
-                    ->whereNull('komponen_id');
-    }
+    // public function components()
+    // {
+    //     return $this->belongsTo(Components::class,'ssh_id','komponen_id')
+    //                 ->whereNull('komponen_id');
+    // }
 
     // public function account()
     // {
