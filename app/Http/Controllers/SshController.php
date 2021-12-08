@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Account;
-use Illuminate\Http\Request;
-use Yajra\DataTables\Facades\DataTables;
 use App\Ssh;
+use App\User;
+use App\Account;
 use App\Standard;
 use App\Components;
-use Illuminate\Support\Facades\Storage;
-use Maatwebsite\Excel\Facades\Excel;
+use App\CDetails;
 use App\Imports\SshImport;
-use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
+use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class SshController extends Controller
 {
@@ -127,10 +129,101 @@ class SshController extends Controller
 
     public function terimaSsh(Request $request)
     {
-        $data=$request->all();
-        dd($data);
+            $data=$request->except('ssh_id','kode');
+            $data2=$request->except('ssh_id','kode','_token');
+            $id=$request['ssh_id'];
+            $t=Ssh::where('ssh_id',$id)->firstOrFail();
+            
+            if ($request->r1 == '-' ) {
+                unset($data2['r1']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r1']
+                ]);
+            }
+            if ($request->r2 == '-') {
+                unset($data2['r2']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r2']
+                ]);
+            }
+            if ($request->r3 == '-') {
+                unset($data2['r3']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r3']
+                ]);
+            }
+            if ($request->r4 == '-') {
+                unset($data2['r4']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r4']
+                ]);
+            }
+            if ($request->r5 == '-') {
+                unset($data2['r5']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r5']
+                ]);
+            }
+            if ($request->r6 == '-') {
+                unset($data2['r6']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r6']
+                ]);
+            }
+            if ($request->r7 == '-') {
+                unset($data2['r7']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r7']
+                ]);
+            }
+            if ($request->r8 == '-') {
+                unset($data2['r8']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r8']
+                ]);
+            }
+            if ($request->r9 == '-') {
+                unset($data2['r9']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r9']
+                ]);
+            }
+            if ($request->r10 == '-') {
+                unset($data2['r10']);
+            }else {
+                CDetails::create([
+                    'comp_id' => $id,
+                    'acc_id' => $data['r10']
+                ]);
+            }
 
-        // return redirect()->route('data-keputusan');
+            Components::create([
+                'standar_id' => $request->kode,
+                'komponen_id' => $id
+            ]);
+            
+            $t->where('ssh_id',$id)->update($data2);
+            dd($t);
+
+            // return redirect()->route('data-keputusan');
     }
 
 }

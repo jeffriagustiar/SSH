@@ -74,14 +74,27 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 1</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R1" style="width: 100%;" name="r1" required>
+                            @forelse ($acc as $a)
+                              <option value="{{ $a->id }}">{{ $a->kode_rekening .' '.$a->nama_rekening }}</option>
+                            @empty
+                              <option>Kosong</option>
+                            @endforelse
+                          </select>
+                          </div>
+                      </div>
+
                         @php
-                          for ($i=1; $i <= 2 ; $i++) { 
+                          for ($i=2; $i <= 10 ; $i++) { 
                         @endphp
                         <div class="form-group row">
                             <label for="inputEmail" class="col-sm-2 col-form-label">Rekening {{ $i }}</label>
                             <div class="col-sm-10">
-                              <select class="form-control R{{ $i }}" style="width: 100%;" name="R{{ $i }}">
-                      
+                              <select class="form-control R{{ $i }}" style="width: 100%;" name="r{{ $i }}" required>
+                                <option value="-">Pilih Rekening</option>
                               @forelse ($acc as $a)
                                 <option value="{{ $a->id }}">{{ $a->kode_rekening .' '.$a->nama_rekening }}</option>
                               @empty

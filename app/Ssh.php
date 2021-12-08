@@ -13,7 +13,8 @@ class Ssh extends Model
     protected $table = 'ssh';
 
     protected $fillable = [
-        'ssh_id','uraian','spek','satuan','harga','users_id','kelompok','pesan'
+        'ssh_id','uraian','spek','satuan','harga','users_id','kelompok','pesan',
+        'r1','r2','r3','r4','r5','r6','r7','r8','r9','r10'
     ];
 
     // public function components()
