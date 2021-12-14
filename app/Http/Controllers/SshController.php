@@ -221,9 +221,41 @@ class SshController extends Controller
             ]);
             
             $t->where('ssh_id',$id)->update($data2);
-            dd($t);
+            // dd($t);
 
-            // return redirect()->route('data-keputusan');
+            return redirect()->route('data-keputusan');
+    }
+
+    public function listSahSsh(Request $request)
+    {
+        if(request()->ajax())
+        {
+            $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
+                //->whereNull('components.komponen_id')
+                //->where('ssh.users_id',Auth::user()->id)
+                ->get();
+            $query = $ssh;
+
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->addColumn('action', function($item){
+                    return '
+                        <div class="btn-group">
+                                    
+                                        <a href="'.route('data-ssh-add-d',$item->ssh_id).'" class="btn btn-block btn-success"  >
+                                            <i class="fas fa-plus"></i>
+                                            Add
+                                        </a>
+                        </div>
+                    ';
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
+            
+        return view('pages.ssh_decision_list_sah');
     }
 
 }
+

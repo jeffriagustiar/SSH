@@ -28,6 +28,7 @@ Route::delete('/ssh/{id}', 'SshController@destroy')->name('ssh-delete');
 Route::get('/ssh/decision','SshController@decision')->name('data-keputusan');
 Route::post('/ssh/decision/simpan','SshController@terimaSsh')->name('data-ssh-add');
 Route::get('/ssh/decision/add/{id}','SshController@sshDA')->name('data-ssh-add-d');
+Route::get('/ssh/decision/list/sah','SshController@listSahSsh')->name('data-ssh-sah');
 // Route::post('/ssh/decision/msg','SshController@terimaSsh')->name('data-ssh-pesan'); //belum
 
 // Route::post('/importssh', 'HomeController@importSsh')->name('importSsh');
