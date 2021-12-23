@@ -50,6 +50,24 @@ class SshController extends Controller
         return view('pages.ssh_table');
     }
 
+    public function sshSahUser(Request $request)
+    {
+        if(request()->ajax())
+        {
+            $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
+                ->whereNotNull('components.komponen_id')
+                ->where('ssh.users_id',Auth::user()->id)
+                ->get();
+            $query = $ssh;
+
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->make();
+        }
+            
+        return view('pages.ssh_decision_list_sah');
+    }
+
     public function importSsh(Request $request)
     {
         $this->validate($request, [

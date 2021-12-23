@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth']],function(){
     Route::post('/home/profile/{id}', 'HomeController@profileEdit')->name('home-profile-edit');
 
     Route::get('/ssh','SshController@index')->name('data-ssh');
+    Route::get('/ssh/sah','SshController@sshSahUser')->name('data-ssh-sah-user');
     Route::post('/importssh', 'SshController@importSsh')->name('importSsh');
     Route::delete('/ssh/{id}', 'SshController@destroy')->name('ssh-delete');
     Route::get('/ssh/decision','SshController@decision')->name('data-keputusan');

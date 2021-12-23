@@ -42,6 +42,8 @@
                   <ul class="nav nav-pills">
                     <li class="nav-item"><a class="nav-link active" href="#listssh" data-toggle="tab">List SSH</a></li>
                     <li class="nav-item"><a class="nav-link" href="#upload" data-toggle="tab">Upload SSH</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#listsshsah" data-toggle="tab">SSH Sah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#listsshlive" data-toggle="tab">SSH Live SIPD</a></li>
                   </ul>
                 </div><!-- /.card-header -->
                 <div class="card-body">
@@ -81,7 +83,44 @@
                         
                     </div>
                     <!-- /.tab-pane -->
-  
+                    
+                    
+                    <div class="tab-pane" id="listsshsah">
+                      <!-- Post -->
+                      <div class="card-body pad table-responsive">
+                        <table class="table table-bordered table-striped " id="crudTable2" width="100%">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Uraian</th>
+                              <th>Spek</th>
+                              <th>Satuan</th>
+                              <th>Harga</th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                      <!-- /.post -->
+                    </div>
+                    
+                    
+                    <div class="tab-pane" id="listsshlive">
+                      <!-- Post -->
+                      <div class="card-body pad table-responsive">
+                        <table class="table table-bordered table-striped " id="crudTable3" width="100%">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Uraian</th>
+                              <th>Spek</th>
+                              <th>Satuan</th>
+                              <th>Harga</th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                      <!-- /.post -->
+                    </div>
                     
                     <!-- /.tab-pane -->
                   </div>
@@ -142,6 +181,54 @@
           orderable: false,
           searcable: false,
           width: '15%'
+        },
+      ],
+    })
+
+    var datatable = $('#crudTable2').DataTable({
+      processing : true,
+      serverSide: true,
+      ordering: true,
+      // dom: 'Bfrtip',
+      //   buttons: [
+      //       'copy', 'csv', 'excel', 'pdf', 'print'
+      //   ],
+      ajax:{
+        url: '{{ route('data-ssh-sah-user') }}'
+      },
+      columns:[
+        {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+        {data: 'uraian',name: 'uraian'},
+        {data: 'spek',name: 'spek'},
+        {data: 'satuan',name: 'satuan'},
+        {data: 'harga',name: 'harga', 
+            render: function (data, type, row, meta) {
+              return meta.settings.fnFormatNumber(row.harga);
+            }
+        },
+      ],
+    })
+
+    var datatable = $('#crudTable3').DataTable({
+      processing : true,
+      serverSide: true,
+      ordering: true,
+      // dom: 'Bfrtip',
+      //   buttons: [
+      //       'copy', 'csv', 'excel', 'pdf', 'print'
+      //   ],
+      ajax:{
+        url: '{{ route('data-ssh-sah-user') }}'
+      },
+      columns:[
+        {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+        {data: 'uraian',name: 'uraian'},
+        {data: 'spek',name: 'spek'},
+        {data: 'satuan',name: 'satuan'},
+        {data: 'harga',name: 'harga', 
+            render: function (data, type, row, meta) {
+              return meta.settings.fnFormatNumber(row.harga);
+            }
         },
       ],
     })
