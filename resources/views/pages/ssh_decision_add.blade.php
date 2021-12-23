@@ -62,7 +62,7 @@
                         <div class="form-group row">
                             <label for="inputName" class="col-sm-2 col-form-label">Kode</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" value="{{ $ssh->ssh_id }}" name='ssh_id' required>
+                              <input type="hidden" class="form-control" value="{{ $ssh->ssh_id }}" name='ssh_id' required>
                             <select class="form-control select2" style="width: 100%;" name="kode">
                       
                               @forelse ($stand as $s)

@@ -37,24 +37,38 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('data-ssh') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pengajuan SSH</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('data-keputusan') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List SSH</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('data-ssh-sah') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List SSH Sah</p>
-                </a>
-              </li>
+              @php
+                  if (Auth::user()->level == 'user' ) 
+                  {
+              @endphp
+                  <li class="nav-item">
+                    <a href="{{ route('data-ssh') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengajuan SSH</p>
+                    </a>
+                  </li>
+              @php
+                  }
+              @endphp
+              @php
+                if (Auth::user()->level == 'verifikator') 
+                {
+              @endphp
+                <li class="nav-item">
+                  <a href="{{ route('data-keputusan') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List SSH </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('data-ssh-sah') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List SSH Sah</p>
+                  </a>
+                </li>
+              @php
+                  }
+              @endphp
             </ul>
           </li>
 

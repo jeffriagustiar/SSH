@@ -231,7 +231,7 @@ class SshController extends Controller
         if(request()->ajax())
         {
             $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
-                //->whereNull('components.komponen_id')
+                ->whereNotNull('components.komponen_id')
                 //->where('ssh.users_id',Auth::user()->id)
                 ->get();
             $query = $ssh;
@@ -242,9 +242,9 @@ class SshController extends Controller
                     return '
                         <div class="btn-group">
                                     
-                                        <a href="'.route('data-ssh-add-d',$item->ssh_id).'" class="btn btn-block btn-success"  >
-                                            <i class="fas fa-plus"></i>
-                                            Add
+                                        <a href="'.route('data-ssh-batal',$item->ssh_id).'" class="btn btn-block btn-danger"  >
+                                            <i class="fas fa-trash"></i>
+                                            Delete
                                         </a>
                         </div>
                     ';
@@ -255,6 +255,31 @@ class SshController extends Controller
         }
             
         return view('pages.ssh_decision_list_sah');
+    }
+
+    public function sshBatal( $id)
+    {
+        $item = Components::where('komponen_id',$id);//->get();
+        $item2 = CDetails::where('comp_id',$id);//->get();
+        $item3 = Ssh::where('ssh_id',$id)->firstOrFail();//->get();
+        
+        $item->delete();
+        $item2->delete();
+        $item3->where('ssh_id',$id)->update([
+            'r1' => NULL,
+            'r2' => NULL,
+            'r3' => NULL,
+            'r4' => NULL,
+            'r5' => NULL,
+            'r6' => NULL,
+            'r7' => NULL,
+            'r8' => NULL,
+            'r9' => NULL,
+            'r10' => NULL
+        ]);
+        // dd($item,$item2);
+
+        return redirect()->route('data-ssh-sah');
     }
 
 }

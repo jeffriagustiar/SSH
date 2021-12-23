@@ -45,7 +45,7 @@
               <div class="card">
                 <div class="card-header p-2">
                   <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="#listssh" data-toggle="tab">List SSH</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#listssh" data-toggle="tab">List SSH Sah</a></li>
                     {{-- <li class="nav-item"><a class="nav-link" href="#listsah" data-toggle="tab">List SSH Sah</a></li> --}}
                   </ul>
                 </div><!-- /.card-header -->
@@ -142,7 +142,8 @@
       //       'copy', 'csv', 'excel', 'pdf', 'print'
       //   ],
       ajax:{
-        url: '{!! url()->current() !!}'
+        // url: '{!! url()->current() !!}'
+        url: '{{ route('data-ssh-sah') }}'
       },
       columns:[
         {data: 'DT_RowIndex', name: 'DT_RowIndex'},
