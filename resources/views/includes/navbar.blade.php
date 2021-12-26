@@ -156,18 +156,52 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="##" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="##" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
+              @php
+                  if (Auth::user()->level == 'user' || Auth::user()->level == 'root') 
+                  {
+              @endphp
+                  <li class="nav-item">
+                    <a href="{{ route('data-hspk') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengajuan HSPK</p>
+                    </a>
+                  </li>
+              @php
+                  }
+              @endphp
+              @php
+                if (Auth::user()->level == 'verifikator' || Auth::user()->level == 'root') 
+                {
+              @endphp
+                <li class="nav-item">
+                  <a href="{{ route('data-keputusan-hspk') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List hspk </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('data-hspk-sah') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List HSPK Sah</p>
+                  </a>
+                </li>
+              @php
+                  }
+              @endphp
+              
+              @php
+                if (Auth::user()->level == 'upload' || Auth::user()->level == 'root') 
+                {
+              @endphp
+                <li class="nav-item">
+                  <a href="{{ route('data-hspk-download') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Download HSPK </p>
+                  </a>
+                </li>
+              @php
+                  }
+              @endphp
             </ul>
           </li>
 

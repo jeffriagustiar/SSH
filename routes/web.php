@@ -50,6 +50,19 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/sbu/download','SbuController@sbuDownload')->name('data-sbu-download');
     Route::post('/sbu/download/templete','SbuController@sbuTemplete')->name('sbu-download-templete');
 
+    //HSPK
+    Route::get('/hspk','HspkController@index')->name('data-hspk');
+    Route::get('/hspk/sah','HspkController@hspkSahUser')->name('data-hspk-sah-user');
+    Route::post('/importhspk', 'HspkController@importHspk')->name('importHspk');
+    Route::delete('/hspk/{id}', 'HspkController@destroy')->name('hspk-delete');
+    Route::get('/hspk/decision','HspkController@decision')->name('data-keputusan-hspk');
+    Route::post('/hspk/decision/simpan','HspkController@terimaHspk')->name('data-hspk-add');
+    Route::get('/hspk/decision/add/{id}','HspkController@hspkDA')->name('data-hspk-add-d');
+    Route::get('/hspk/decision/list/sah','HspkController@listSahHspk')->name('data-hspk-sah');
+    Route::get('/hspk/decision/list/sah/{id}','HspkController@hspkBatal')->name('data-hspk-batal');
+    Route::get('/hspk/download','HspkController@hspkDownload')->name('data-hspk-download');
+    Route::post('/hspk/download/templete','HspkController@hspkTemplete')->name('hspk-download-templete');
+
 });    
 // Route::post('/ssh/decision/msg','SshController@terimaSsh')->name('data-ssh-pesan'); //belum
 

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Ssh;
 use App\Sbu;
+use App\Hspk;
 use App\CDetails;
 use App\Standard;
 
@@ -27,6 +28,11 @@ class Components extends Model
     public function sbu()
     {
         return $this->belongsTo(Sbu::class,'komponen_id','sbu_id');
+    }
+
+    public function hspk()
+    {
+        return $this->belongsTo(Hspk::class,'komponen_id','hspk_id');
     }
 
     public function cdetail()
