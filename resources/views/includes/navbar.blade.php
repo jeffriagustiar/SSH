@@ -38,7 +38,7 @@
             </a>
             <ul class="nav nav-treeview">
               @php
-                  if (Auth::user()->level == 'user' ) 
+                  if (Auth::user()->level == 'user' /*|| Auth::user()->level == 'root'*/) 
                   {
               @endphp
                   <li class="nav-item">
@@ -51,7 +51,7 @@
                   }
               @endphp
               @php
-                if (Auth::user()->level == 'verifikator') 
+                if (Auth::user()->level == 'verifikator' /*|| Auth::user()->level == 'root'*/) 
                 {
               @endphp
                 <li class="nav-item">
@@ -64,6 +64,20 @@
                   <a href="{{ route('data-ssh-sah') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>List SSH Sah</p>
+                  </a>
+                </li>
+              @php
+                  }
+              @endphp
+              
+              @php
+                if (Auth::user()->level == 'upload' /*|| Auth::user()->level == 'root'*/) 
+                {
+              @endphp
+                <li class="nav-item">
+                  <a href="{{ route('data-ssh-download') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Download SSH </p>
                   </a>
                 </li>
               @php

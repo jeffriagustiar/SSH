@@ -43,7 +43,42 @@
 
                 <br>
 
-                <div class="form-group">
+                @forelse ($com as $c)
+                <table class="table table-bordered table-striped " id="crudTable3" width="100%">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Uraian</th>
+                        <th>Spek</th>
+                        <th>Satuan</th>
+                        <th>Harga</th>
+                        <th>Harga</th>
+                        <th>Harga</th>
+                      </tr>
+                      <td>{{ $c->sandard->kode_standar }}</td>
+                      <td>{{ $c->ssh->uraian }}</td>
+                      <td>{{ $c->ssh->spek }}</td>
+                      <td>{{ $c->ssh->satuan }}</td>
+                      <td>{{ $c->ssh->harga }}</td>
+                      <td>{{ $c->ssh->acc1->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc2->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc3->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc4->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc5->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc6->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc7->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc8->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc9->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->acc10->kode_rekening ?? ''}}</td>
+                      <td>{{ $c->ssh->kelompok }}</td>
+                       
+                    </thead>
+                  </table>
+                @empty
+                    
+                @endforelse
+
+                {{-- <div class="form-group">
                     <label>Minimal</label>
                     <select class="form-control select2" style="width: 100%;">
                       
@@ -53,21 +88,21 @@
                         <option>Kosong</option>
                       @endforelse
                     </select>
-                  </div>
+                </div> --}}
 
-                @forelse ($ssh as $u)
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    {{-- @forelse ($ssh as $u)
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-                   AA {{ $u->kelompok }}{{ $u->ssh_id }}
-                </div>
-                @empty
-                    <div class="card-header">{{ __('Kosong') }}</div>
-                @endforelse
+                    AA {{ $u->kelompok }}{{ $u->ssh_id }}
+                    </div>
+                    @empty
+                        <div class="card-header">{{ __('Kosong') }}</div>
+                    @endforelse --}}
 
             </div>
         </div>
@@ -75,7 +110,7 @@
 </div>
 @endsection
 
-@push('addon-script')
+{{-- @push('addon-script')
 <!-- Select2 -->
 <script src="adminlte/plugins/select2/js/select2.full.min.js"></script>
 <script>
@@ -85,4 +120,4 @@
 
   })
 </script>
-@endpush
+@endpush --}}

@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/ssh/decision/add/{id}','SshController@sshDA')->name('data-ssh-add-d');
     Route::get('/ssh/decision/list/sah','SshController@listSahSsh')->name('data-ssh-sah');
     Route::get('/ssh/decision/list/sah/{id}','SshController@sshBatal')->name('data-ssh-batal');
+    Route::get('/ssh/download','SshController@sshDownload')->name('data-ssh-download');
+    Route::post('/ssh/download/templete','SshController@sshTemplete')->name('ssh-download-templete');
 
 });    
 // Route::post('/ssh/decision/msg','SshController@terimaSsh')->name('data-ssh-pesan'); //belum

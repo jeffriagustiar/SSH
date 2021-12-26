@@ -8,6 +8,7 @@ use App\Account;
 use App\Standard;
 use App\Components;
 use App\CDetails;
+use App\Exports\SshExport;
 use App\Imports\SshImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,6 +58,7 @@ class SshController extends Controller
             $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
                 ->whereNotNull('components.komponen_id')
                 ->where('ssh.users_id',Auth::user()->id)
+                ->where('components.status',1)
                 ->get();
             $query = $ssh;
 
@@ -298,6 +300,30 @@ class SshController extends Controller
         // dd($item,$item2);
 
         return redirect()->route('data-ssh-sah');
+    }
+
+    public function sshDownload()
+    {
+        return view('pages.ssh_download');
+    }
+
+    public function sshTemplete(Request $request)
+    {
+        // $com = Components::get();
+
+        // return view('pages.ssh',[
+        //     'com' => $com,
+        // ]);
+        $date1 = $request->date1;
+        $date2 = $request->date2;
+        
+        // $item3 = Ssh::whereBetween('created_at',[$date1,$date2])->get();
+        Components::where('komponen_id','LIKE',"%SSH%")
+            ->whereBetween('created_at',[$date1,$date2])->update([
+                'status' => 1
+            ]);
+        // dd($date1);
+        return Excel::download(new SshExport($date1,$date2),'ssh '.$date1.' sampai '.$date2.'.xlsx');
     }
 
 }

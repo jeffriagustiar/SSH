@@ -23,10 +23,55 @@ class Ssh extends Model
     //                 ->whereNull('komponen_id');
     // }
 
-    // public function account()
-    // {
-    //     return $this->belongsTo(Account::class,'kode','kode_rekening');
-    // }
+    public function acc1()
+    {
+        return $this->belongsTo(Account::class,'r1','id');
+    }
+
+    public function acc2()
+    {
+        return $this->belongsTo(Account::class,'r2','id');
+    }
+
+    public function acc3()
+    {
+        return $this->belongsTo(Account::class,'r3','id');
+    }
+
+    public function acc4()
+    {
+        return $this->belongsTo(Account::class,'r4','id');
+    }
+
+    public function acc5()
+    {
+        return $this->belongsTo(Account::class,'r5','id');
+    }
+
+    public function acc6()
+    {
+        return $this->belongsTo(Account::class,'r6','id');
+    }
+
+    public function acc7()
+    {
+        return $this->belongsTo(Account::class,'r7','id');
+    }
+
+    public function acc8()
+    {
+        return $this->belongsTo(Account::class,'r8','id');
+    }
+
+    public function acc9()
+    {
+        return $this->belongsTo(Account::class,'r9','id');
+    }
+
+    public function acc10()
+    {
+        return $this->belongsTo(Account::class,'r10','id');
+    }
 
     // public function standard()
     // {

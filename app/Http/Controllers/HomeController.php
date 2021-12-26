@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
 use App\Imports\SshImport;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ use App\Profile;
 use App\Ssh;
 use App\Standard;
 use App\Components;
+use App\CDetails;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -40,6 +42,9 @@ class HomeController extends Controller
                 ->whereNull('components.komponen_id')
                 ->get();
         $standard = Standard::get();
+
+        $com = Components::get();
+        $acc = CDetails::get();
         // $ssh = Components::get();
         // $users = Profile::with(['users'])
         //         ->get();
@@ -53,6 +58,8 @@ class HomeController extends Controller
             'user' => $user,
             'ssh' => $ssh,
             'stand' => $standard,
+            'com' => $com,
+            'acc' => $acc,
             // 'ssh' => $ssh
         ]);
     }
