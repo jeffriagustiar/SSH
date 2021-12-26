@@ -253,6 +253,7 @@ class SbuController extends Controller
         {
             $sbu = Sbu::leftjoin('components','sbu.sbu_id','=','components.komponen_id')
                 ->whereNotNull('components.komponen_id')
+                ->whereNull('components.status')
                 //->where('ssh.users_id',Auth::user()->id)
                 ->get();
             $query = $sbu;

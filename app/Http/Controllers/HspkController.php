@@ -252,6 +252,7 @@ class HspkController extends Controller
         {
             $hspk = Hspk::leftjoin('components','hspk.hspk_id','=','components.komponen_id')
                 ->whereNotNull('components.komponen_id')
+                ->whereNull('components.status')
                 //->where('ssh.users_id',Auth::user()->id)
                 ->get();
             $query = $hspk;

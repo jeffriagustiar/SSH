@@ -252,6 +252,7 @@ class SshController extends Controller
         {
             $ssh = Ssh::leftjoin('components','ssh.ssh_id','=','components.komponen_id')
                 ->whereNotNull('components.komponen_id')
+                ->whereNull('components.status')
                 //->where('ssh.users_id',Auth::user()->id)
                 ->get();
             $query = $ssh;
