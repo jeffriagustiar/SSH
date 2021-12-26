@@ -71,6 +71,25 @@ class SbuController extends Controller
         return view('pages.sbu.sbu_decision_list_sah');
     }
 
+    public function sbuSahUser2(Request $request)
+    {
+        if(request()->ajax())
+        {
+            $sbu = Sbu::leftjoin('components','sbu.sbu_id','=','components.komponen_id')
+                ->whereNotNull('components.komponen_id')
+                ->where('sbu.users_id',Auth::user()->id)
+                ->whereNull('components.status')
+                ->get();
+            $query = $sbu;
+
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->make();
+        }
+            
+        return view('pages.sbu.sbu_decision_list_sah');
+    }
+
     public function importSbu(Request $request)
     {
         $this->validate($request, [

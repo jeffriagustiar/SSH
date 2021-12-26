@@ -194,7 +194,7 @@
       //       'copy', 'csv', 'excel', 'pdf', 'print'
       //   ],
       ajax:{
-        url: '{{ route('data-ssh-sah-user') }}'
+        url: '{{ route('data-ssh-sah-user2') }}'
       },
       columns:[
         {data: 'DT_RowIndex', name: 'DT_RowIndex'},

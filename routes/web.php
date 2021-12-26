@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']],function(){
     //SSH
     Route::get('/ssh','SshController@index')->name('data-ssh');
     Route::get('/ssh/sah','SshController@sshSahUser')->name('data-ssh-sah-user');
+    Route::get('/ssh/sah2','SshController@sshSahUser2')->name('data-ssh-sah-user2');
     Route::post('/importssh', 'SshController@importSsh')->name('importSsh');
     Route::delete('/ssh/{id}', 'SshController@destroy')->name('ssh-delete');
     Route::get('/ssh/decision','SshController@decision')->name('data-keputusan');
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['auth']],function(){
     //SBU
     Route::get('/sbu','SbuController@index')->name('data-sbu');
     Route::get('/sbu/sah','SbuController@sbuSahUser')->name('data-sbu-sah-user');
+    Route::get('/sbu/sah2','SbuController@sbuSahUser2')->name('data-sbu-sah-user2');
     Route::post('/importsbu', 'SbuController@importSbu')->name('importSbu');
     Route::delete('/sbu/{id}', 'SbuController@destroy')->name('sbu-delete');
     Route::get('/sbu/decision','SbuController@decision')->name('data-keputusan-sbu');
@@ -53,6 +55,7 @@ Route::group(['middleware' => ['auth']],function(){
     //HSPK
     Route::get('/hspk','HspkController@index')->name('data-hspk');
     Route::get('/hspk/sah','HspkController@hspkSahUser')->name('data-hspk-sah-user');
+    Route::get('/hspk/sah2','HspkController@hspkSahUser2')->name('data-hspk-sah-user2');
     Route::post('/importhspk', 'HspkController@importHspk')->name('importHspk');
     Route::delete('/hspk/{id}', 'HspkController@destroy')->name('hspk-delete');
     Route::get('/hspk/decision','HspkController@decision')->name('data-keputusan-hspk');

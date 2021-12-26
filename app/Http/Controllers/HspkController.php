@@ -70,6 +70,25 @@ class HspkController extends Controller
         return view('pages.hspk.hspk_decision_list_sah');
     }
 
+    public function hspkSahUser2(Request $request)
+    {
+        if(request()->ajax())
+        {
+            $hspk = Hspk::leftjoin('components','hspk.hspk_id','=','components.komponen_id')
+                ->whereNotNull('components.komponen_id')
+                ->where('hspk.users_id',Auth::user()->id)
+                ->whereNull('components.status')
+                ->get();
+            $query = $hspk;
+
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->make();
+        }
+            
+        return view('pages.hspk.hspk_decision_list_sah');
+    }
+
     public function importHspk(Request $request)
     {
         $this->validate($request, [
