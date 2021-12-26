@@ -38,7 +38,7 @@
             </a>
             <ul class="nav nav-treeview">
               @php
-                  if (Auth::user()->level == 'user' /*|| Auth::user()->level == 'root'*/) 
+                  if (Auth::user()->level == 'user' || Auth::user()->level == 'root') 
                   {
               @endphp
                   <li class="nav-item">
@@ -51,7 +51,7 @@
                   }
               @endphp
               @php
-                if (Auth::user()->level == 'verifikator' /*|| Auth::user()->level == 'root'*/) 
+                if (Auth::user()->level == 'verifikator' || Auth::user()->level == 'root') 
                 {
               @endphp
                 <li class="nav-item">
@@ -71,7 +71,7 @@
               @endphp
               
               @php
-                if (Auth::user()->level == 'upload' /*|| Auth::user()->level == 'root'*/) 
+                if (Auth::user()->level == 'upload' || Auth::user()->level == 'root') 
                 {
               @endphp
                 <li class="nav-item">
@@ -96,18 +96,52 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="##" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="##" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
+              @php
+                  if (Auth::user()->level == 'user' || Auth::user()->level == 'root') 
+                  {
+              @endphp
+                  <li class="nav-item">
+                    <a href="{{ route('data-sbu') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengajuan SBU</p>
+                    </a>
+                  </li>
+              @php
+                  }
+              @endphp
+              @php
+                if (Auth::user()->level == 'verifikator' || Auth::user()->level == 'root') 
+                {
+              @endphp
+                <li class="nav-item">
+                  <a href="{{ route('data-keputusan-sbu') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List SBU </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('data-sbu-sah') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>List SBU Sah</p>
+                  </a>
+                </li>
+              @php
+                  }
+              @endphp
+              
+              @php
+                if (Auth::user()->level == 'upload' || Auth::user()->level == 'root') 
+                {
+              @endphp
+                <li class="nav-item">
+                  <a href="{{ route('data-sbu-download') }}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Download SBU </p>
+                  </a>
+                </li>
+              @php
+                  }
+              @endphp
             </ul>
           </li>
 

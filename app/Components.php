@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Ssh;
+use App\Sbu;
 use App\CDetails;
 use App\Standard;
 
@@ -21,6 +22,11 @@ class Components extends Model
     public function ssh()
     {
         return $this->belongsTo(Ssh::class,'komponen_id','ssh_id');
+    }
+
+    public function sbu()
+    {
+        return $this->belongsTo(Sbu::class,'komponen_id','sbu_id');
     }
 
     public function cdetail()
