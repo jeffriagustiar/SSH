@@ -63,13 +63,13 @@
                             <label for="inputName" class="col-sm-2 col-form-label">Kode</label>
                             <div class="col-sm-10">
                               <input type="hidden" class="form-control" value="{{ $sbu->sbu_id }}" name='sbu_id' required>
-                            <select class="form-control select2" style="width: 100%;" name="kode">
+                            <select class="form-control select2" style="width: 100%;" name="kode" required>
                       
-                              @forelse ($stand as $s)
+                              {{-- @forelse ($stand as $s)
                                 <option value="{{ $s->id }}">{{ $s->kode_standar .' '.$s->nama_standar }}</option>
                               @empty
                                 <option>Kosong</option>
-                              @endforelse
+                              @endforelse --}}
                             </select>
                             </div>
                         </div>
@@ -78,34 +78,95 @@
                           <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 1</label>
                           <div class="col-sm-10">
                             <select class="form-control R1" style="width: 100%;" name="r1" required>
-                            @forelse ($acc as $a)
+                            {{-- @forelse ($acc as $a)
                               <option value="{{ $a->id }}">{{ $a->kode_rekening .' '.$a->nama_rekening }}</option>
                             @empty
                               <option>Kosong</option>
-                            @endforelse
+                            @endforelse --}}
                           </select>
                           </div>
-                      </div>
+                      	</div>
 
-                        @php
-                          for ($i=2; $i <= 10 ; $i++) { 
-                        @endphp
                         <div class="form-group row">
-                            <label for="inputEmail" class="col-sm-2 col-form-label">Rekening {{ $i }}</label>
-                            <div class="col-sm-10">
-                              <select class="form-control R{{ $i }}" style="width: 100%;" name="r{{ $i }}" required>
-                                <option value="-">Pilih Rekening</option>
-                              @forelse ($acc as $a)
-                                <option value="{{ $a->id }}">{{ $a->kode_rekening .' '.$a->nama_rekening }}</option>
-                              @empty
-                                <option>Kosong</option>
-                              @endforelse
-                            </select>
-                            </div>
-                        </div>
-                        @php
-                          }
-                        @endphp
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 2</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R2" style="width: 100%;" name="r2">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 3</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R3" style="width: 100%;" name="r3">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 4</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R4" style="width: 100%;" name="r4">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 5</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R5" style="width: 100%;" name="r5">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 6</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R6" style="width: 100%;" name="r6">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 7</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R7" style="width: 100%;" name="r7">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 8</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R8" style="width: 100%;" name="r8">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 9</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R9" style="width: 100%;" name="r9">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
+
+                        <div class="form-group row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label">Rekening 10</label>
+                          <div class="col-sm-10">
+                            <select class="form-control R10" style="width: 100%;" name="r10">
+								              <option value="-">Ketik 3 Karakter Untuk Pilih Rekening</option>
+                          </select>
+                          </div>
+                      	</div>
 
                        
                         
@@ -161,19 +222,184 @@
     
   $(function () {
   //Initialize Select2 Elements
-  $('.select2').select2()
-  $('.R1').select2()
-  $('.R2').select2()
-  $('.R3').select2()
-  $('.R4').select2()
-  $('.R5').select2()
-  $('.R6').select2()
-  $('.R7').select2()
-  $('.R8').select2()
-  $('.R9').select2()
-  $('.R10').select2()
+  $('.select2').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Pilih Kode Komponen',
+		ajax: {
+			url: "{{ route('ajax.stan') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
 
-  })  
+				return query;
+			}
+		}
+	})
+  $('.R1').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R2').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R3').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R4').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R5').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R6').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R7').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R8').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R9').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+  $('.R10').select2({
+		minimumInputLength:3,
+		allowClear: true,
+		delay: 250,
+		placeholder : 'Ketik 3 Karakter Untuk Pilih Rekening',
+		ajax: {
+			url: "{{ route('ajax.rek') }}",
+			data: function (params) {
+				var query = {
+					q: params.term
+				}
+
+				return query;
+			}
+		}
+	})
+
+  })   
 
   $(function () {
     // Summernote

@@ -24,6 +24,10 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/home/profile', 'HomeController@profile')->name('home-profile');
     Route::post('/home/profile/{id}', 'HomeController@profileEdit')->name('home-profile-edit');
 
+    //Standar & Account
+    Route::get('/lookup/stan', 'SshController@lookUpStan')->name('ajax.stan');
+    Route::get('/lookup/rek', 'SshController@lookUprek')->name('ajax.rek');
+
     //SSH
     Route::get('/ssh','SshController@index')->name('data-ssh');
     Route::get('/ssh/sah','SshController@sshSahUser')->name('data-ssh-sah-user');

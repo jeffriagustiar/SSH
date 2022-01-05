@@ -16,7 +16,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('kode_rekening');
-            $table->string('nama_rekening');
+            $table->text('nama_rekening');
             $table->integer('pendapatan');
             $table->integer('belanja');
             $table->integer('pembiayaan');

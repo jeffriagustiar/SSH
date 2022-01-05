@@ -348,5 +348,29 @@ class SshController extends Controller
         return Excel::download(new SshExport($date1,$date2),'ssh '.$date1.' sampai '.$date2.'.xlsx');
     }
 
+    public function lookUpStan(Request $request)
+	{
+		$users = Standard::selectRaw('id, nama_standar AS text')
+			->whereRaw('nama_standar LIKE ?', ['%' . $request->q . '%'])
+			->orderBy('nama_standar', 'ASC')
+			->get();
+
+		$return['results'] = $users;
+		
+		return $return;
+	}
+
+    public function lookUprek(Request $request)
+	{
+		$users = Account::selectRaw('id, nama_rekening AS text')
+			->whereRaw('nama_rekening LIKE ?', ['%' . $request->q . '%'])
+			->orderBy('nama_rekening', 'ASC')
+			->get();
+
+		$return['results'] = $users;
+		
+		return $return;
+	}
+
 }
 
